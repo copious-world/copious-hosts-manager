@@ -126,8 +126,10 @@ function update_panels(panel) {
 <div style="display:{g_panels_displayed['host-edit']}" >
   Editor
 </div>
-<div style="display:{g_panels_displayed['host-cmd-line']}" >
-  Command line 
+<div style="display:{g_panels_displayed['host-cmd-line']}" >     
+  <iframe class="terminal" title="terminal-frame" src="http://localhost:8080">
+
+  </iframe>
 </div>
 <div style="display:{g_panels_displayed['host-top']}" >
   Htop 
@@ -213,6 +215,12 @@ function update_panels(panel) {
 
   .selected-panel {
     border-bottom: 1px solid rgb(5, 44, 5);
+  }
+
+
+  .terminal {
+    width: 100%;
+    height: calc(100vh - 180px)
   }
   
 </style>

@@ -29,6 +29,15 @@ const {MultiRelayClient,MessageRelayer} = require('message-relay-services')
 
 
 
+/*
+TERMINAL ... set it up...
+
+    // need frame for : ssh richard@76.229.181.242 -L 8080:localhost:8080 -N
+    // goes to ttyd ... pick a good port (consider using some keys, etc.)
+
+
+*/
+
 // This process becomes the forever process manager for processes launched off of a very private web service.
 //
 
