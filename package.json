@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/copious-world/copious-transitions-manager.git"
+    "url": "git+https://github.com/copious-world/copious-hosts-manager.git"
   },
   "keywords": [
     "process manager",
@@ -23,21 +23,22 @@
   "author": "R. Leddy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/copious-world/copious-transitions-manager/issues"
+    "url": "https://github.com/copious-world/copious-hosts-manager/issues"
   },
-  "homepage": "https://github.com/copious-world/copious-transitions-managerd#readme",
+  "homepage": "https://github.com/copious-world/copious-hosts-managerd#readme",
   "dependencies": {
+    "@paralleldrive/cuid2": "^2.2.2",
     "@polka/send-type": "^0.5.2",
     "body-parser": "^1.20.1",
     "clone-deep": "^4.0.1",
     "cors": "^2.8.5",
     "extra-file-class": "^0.9.19",
     "fs-extra": "^11.1.0",
+    "fuse-native": "^2.2.6",
     "install": "^0.13.0",
     "message-relay-services": "^0.9.21",
     "nan": "^2.22.0",
     "polka": "^0.5.2",
-    "ws": "^8.11.0",
-    "xxhash32-node-cmake": "^1.0.8"
+    "ws": "^8.11.0"
   }
 }

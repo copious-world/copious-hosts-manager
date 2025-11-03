@@ -14,7 +14,6 @@
     "vite": "^5.4.11"
   },
   "dependencies": {
-    "@xterm/xterm": "^5.5.0",
-    "xxhash32-node-cmake": "^1.0.8"
+    "@xterm/xterm": "^5.5.0"
   }
 }

@@ -1,0 +1,56 @@
+## todo
+
+A) TODO LIST  (can this be gracefully exported?)
+
+☐ sysctl on of-this.world
+☐ sysctl on local cluster ... needs to have the order be perfect
+   ☐ test shutdown and restart
+☐ godaddy is asking for money
+☐ git management (in a hurry)
+   ☐ use copious-host-manager to start node.js utility to find all git repositories and report on the state on local machine
+   ☐ provide a quick access menu to repositories
+   ☐ open files in the editor as needed
+   ☐ maybe go so far as to run some git operations from the command line
+      ☐ store the access key safely in the app's pervue
+      ☐ provide quick cloning
+☐ personal data on website --- frame application allows dashboard for idea/project management in conjuction with social network
+   ☐ hosting for the sake of device syncrhonization (but more synching if the progammed USB wallet is put to use)
+   ☐ phone view requirement (if pages are adaptive then this is just a framework app)
+   ☐ distinguish clearly between private data (from little searcher (or better)) AND public data/shared experience
+☐ IGid -- Decentralized ID has to conform to the standard (just because)
+☐ Must make a franchise out of the websites allowing social network expansion from one site expanding out to others
+☐ Calendar control is always an issue ... it is not really solved anywhere... need something that puts things together... iCal standard is a helpful tool (like a hammer for a house)
+☐ mail ... need to own the email experience without going to google or zoho
+☐ mikado for gallery type display (used in media view, etc.) much more professional than what I have using svelte.
+
+
+B) UCWID  --- this is a place for introducing AI into the crypto ID space.
+
+
+C) Development Support
+
+☐ Kanban solution (might just be an app section of a copious-host-manager)
+   ☐ Can move things around by using fuse.
+      ☐ Will need some way to share within the copious.world stack
+☐ Git Repository List (for copious-host-manager)
+   ☑ clear out downloads for interest or possible use (make not of them ... see “possible external feature providers”)
+   ☑ figure out which repos are fully represented on the current machine for fast work and update
+   ☐ manage via a web page (update the copious-host-manager)
+☑ Css layout for larger screens
+☐ some way to open files/dirs (as folders) from within apps such as this
+   ☐ looking for clusters of work (want to open windows in Nemo, not in the editor or other..)
+☐ local file sharing (local file server) 4
+   ☐ can be fuse based
+☐ module dependency graph (need to go beyond npm ... but their might be an npm tool to start with)
+   ☑ found one https://npmgraph.js.org/
+   ☐ make use of https://npmgraph.js.org/
+      ☐ self hosting is possible
+      ☐ might be some way to check configurations for late loading modules or other language modules.
+☐ backup process (clear and fast)
+   ☐ backup this computer and restore its state (this file, too).
+☐ configuration as code https://dev.to/rannn505/configuration-as-code-automating-application-configuration-45k6
+☐ view computers in stack, local/remote, view processes (export htop), view network, asses configurations, etc.
+☐ open directories by project in nemo (or default) xdg-open ~/GitHub/alphas/copious-hosts-manager/
+
+
+

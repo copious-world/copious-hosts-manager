@@ -38,6 +38,18 @@ let g_panels = {
 }
 
 
+let g_panel_menu = {
+  "host-list" : "hosts",
+  "host-stats" : "statistics",
+  "host-ops" : "operations",
+  "host-procs" : "prodedures",
+  "host-edit" : "editor",
+  "host-cmd-line" : "commands",
+  "host-top" : "htop",
+  "host-plugins"  : "plugins"
+}
+
+
 let g_panels_displayed = {
   "host-list" : "block",
   "host-stats" : "none",
@@ -73,14 +85,11 @@ function update_panels(panel) {
         {g_panels[g_panel]}
       </div>
       <ol>
-        <li onclick={(ev) => {g_panel = 'host-list'; update_panels(g_panel) }}>hosts</li>
-        <li onclick={(ev) => {g_panel = 'host-stats'; update_panels(g_panel) }}>statistics</li>
-        <li onclick={(ev) => {g_panel = 'host-ops'; update_panels(g_panel) }}>operations</li>
-        <li onclick={(ev) => {g_panel = 'host-procs'; update_panels(g_panel) }}>processes</li>
-        <li onclick={(ev) => {g_panel = 'host-edit'; update_panels(g_panel) }}>editors</li>
-        <li onclick={(ev) => {g_panel = 'host-cmd-line'; update_panels(g_panel) }}>command line</li>
-        <li onclick={(ev) => {g_panel = 'host-top'; update_panels(g_panel) }}>htop</li>
-        <li onclick={(ev) => {g_panel = 'host-plugins'; update_panels(g_panel) }}>plugins</li>
+        {#each g_panel_selections as a_panel }
+          <li >
+            <button onclick={(ev) => { g_panel = a_panel; update_panels(a_panel) }} >{g_panel_menu[a_panel]}</button>
+          </li>
+        {/each}
       </ol>
     </div>
   </div>

@@ -19,7 +19,6 @@
 	//import { gfmPlugin } from 'svelte-exmarkdown/gfm';
 	
 
-
 	let dialog_data = ""
 	let conf_dialog_data = ""
 	let exec_dialog_data = ""
