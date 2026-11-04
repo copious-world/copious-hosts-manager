@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>lib/child_proc_control.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    
+    <h2><a href="index.html">Overview</a></h2><h2><a href="https://github.com/copious-world/copious-hosts-manager" target="_blank" class="menu-item" id="repository" >Github repo</a></h2><h2><a href="https://www.npmjs.com/package/copious-hosts-manager" target="_blank" class="menu-item" id="package" >Npm package</a></h2><h3>Classes</h3>
+                        <ul id="classes-ul-overflow" class="menu-contained-nav" ><li><a href="ChildProcCom.html">ChildProcCom</a></li><li><a href="ChildProcControl.html">ChildProcControl</a></li><li><a href="HeadlessProcManager.html">HeadlessProcManager</a><ul class='methods'><li data-type='method' style='display: none;'><a href="HeadlessProcManager.html#app_post_start_subscription">app_post_start_subscription</a></li><li data-type='method' style='display: none;'><a href="HeadlessProcManager.html#app_post_start_subscription">app_post_start_subscription</a></li><li data-type='method' style='display: none;'><a href="HeadlessProcManager.html#app_publication_pre_fan_response">app_publication_pre_fan_response</a></li><li data-type='method' style='display: none;'><a href="HeadlessProcManager.html#app_publication_pre_fan_response">app_publication_pre_fan_response</a></li><li data-type='method' style='display: none;'><a href="HeadlessProcManager.html#app_subscription_handler">app_subscription_handler</a></li><li data-type='method' style='display: none;'><a href="HeadlessProcManager.html#app_subscription_handler">app_subscription_handler</a></li></ul></li><li></li><li><a href="PathHandlerProcManager.html">PathHandlerProcManager</a></li></ul>
+                    <h3>Global</h3><ul><li><a href="global.html#app_string_conversion">app_string_conversion</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">lib/child_proc_control.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>
+
+const {ParentIPCMessenger} = require('message-relay-services')
+const {spawn_child} = require('./child_proc_spawner')
+
+
+// ServerWithIPC
+// IPCClient
+
+
+/**
+ * ChildProcControl
+ * 
+ * Objects defined by this class are stored in the `_proc_managers` table in the host process, either headless or web.
+ * 
+ */
+
+class ChildProcControl extends ParentIPCMessenger {
+
+    constructor(conf) {
+        super(conf)
+        this.c_proc = false
+    }
+
+    _init(conf) {}
+
+    set_conf(conf) {
+        this.conf = conf
+    }
+
+    //
+    parameters() {
+        let args = [].concat(this.conf.args)
+        if ( this.conf.runner ) {               // Take care of parameters
+            if( this.conf.runner !== "node" ) {
+                if ( Array.isArray(args) ) {
+                    args.unshift(this.conf.runner)
+                } else if ( typeof args === "string" ) {
+                    if ( args.indexOf(',') > 0 ) {
+                        args = args.split(',')
+                        args.unshift(this.conf.runner)
+                    } else {
+                        args = [this.conf.runner,args]
+                    }
+                }
+            } else {
+                if ( Array.isArray(args) &amp;&amp; (args[0] !== 'node') ) {
+                    args.unshift("node")
+                }
+            }
+        } else {
+            if ( Array.isArray(args) &amp;&amp; (args[0] !== 'node') ) {
+                args.unshift("node")  // put node on the front
+            } else if ( typeof args === "string" ) {
+                if ( args.indexOf(',') > 0 ) {
+                    args = args.split(',')
+                    args.unshift('node')
+                } else {
+                    args = ['node',args]
+                }
+            }
+        }
+        return args
+    }
+
+    spawn_child() {
+        //
+        let args = this.parameters()
+        let c_proc = spawn_child(args)
+        this.c_proc = c_proc
+        super.set_child_process(c_proc) // kept separate... assuming generalized code allow descendants to spawn
+        this.child_controls(this,c_proc)
+        //
+    }
+
+    stop_proc(as_promise) {
+        if ( !(this.c_proc &amp;&amp; this.c_proc.pid) ) return;
+        if ( !this.running ) return
+        //
+        let result = true
+        if ( as_promise ) {
+            let self = this
+            let close_promise = new Promise((resolve,reject) => {
+                this.resolver = () => { resolve(true), self.resolver = false }
+            })
+            result = close_promise
+        }
+        process.kill(this.c_proc.pid,"SIGINT")
+        return result
+    }
+
+    run_proc(if_running) {
+        let run_it = true
+        if ( if_running ) {
+            if ( this.running ) {
+                run_it = false
+            }
+        }
+        if ( run_it ) {
+            this.spawn_child()
+        }
+    }
+
+    async restart_proc() {
+        await this.stop_proc(true)
+        this.run_proc(false)
+    }
+
+    _attempt_reconnect(conf) {
+        this.spawn_child()
+    }
+}
+
+module.exports = ChildProcControl
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Thu Jul 16 2026 23:04:24 GMT-0700 (Pacific Daylight Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

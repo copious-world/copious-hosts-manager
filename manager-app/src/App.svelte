@@ -1504,7 +1504,6 @@
 				{/if}
 			</div>
 			<button  style="font-size:larger" on:click={toggle_password_view}>&#x1F441;</button>
-
 		</div>
 		<div class="inner_div">
 			<button on:click={run_proc}>run</button>

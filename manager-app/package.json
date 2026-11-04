@@ -1,53 +1,54 @@
 {
-  "name": "copious-transitions-manager-web",
-  "version": "0.1.0",
-  "description": "A dashboard for managing the proceses of a copious-transitions app",
-  "main": "index.js",
-  "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public --port=5112"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/copious-world/copious-transitions-manager.git"
-  },
-  "keywords": [
-    "extra-mail",
-    "email",
-    "ipfs",
-    "contact"
-  ],
-  "author": "Richard Leddy",
-  "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/copious-world/copious-transitions-manager"
-  },
-  "homepage": "https://github.com/copious-world/copious-transitions-manager#readme",
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^16.0.0",
-    "@rollup/plugin-node-resolve": "^10.0.0",
-    "@smui/button": "^4.1.0",
-    "@smui/tab": "^4.1.0",
-    "@smui/tab-bar": "^4.1.0",
-    "@zerodevx/svelte-json-view": "^0.2.1",
-    "rollup": "^2.3.4",
-    "rollup-plugin-css-only": "^3.1.0",
-    "rollup-plugin-livereload": "^2.0.0",
-    "rollup-plugin-svelte": "^7.0.0",
-    "rollup-plugin-terser": "^7.0.0",
-    "svelte": "^3.0.0",
-    "svelte-grid": "^3.6.0"
-  },
-  "dependencies": {
-    "fastify": "^3.9.2",
-    "fastify-cors": "^5.1.0",
-    "highlight.js": "^11.6.0",
-    "middie": "^5.2.0",
-    "node-pre-gyp": "^0.17.0",
-    "sirv-cli": "^1.0.0",
-    "sveditor": "^0.0.31",
-    "svelte-exmarkdown": "^3.0.3",
-    "ucwid": "^0.2.5"
-  }
+    "name": "copious-transitions-manager-web",
+    "version": "0.1.0",
+    "description": "A dashboard for managing the proceses of a copious-transitions app",
+    "main": "index.js",
+    "scripts": {
+        "build": "rollup -c",
+        "dev": "rollup -c -w",
+        "start": "sirv public --port=5112",
+        "gen-docs": "jsdoc --configure ./tools/jsdoc.conf -a all -R README.md --verbose"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/copious-world/copious-transitions-manager.git"
+    },
+    "keywords": [
+        "extra-mail",
+        "email",
+        "ipfs",
+        "contact"
+    ],
+    "author": "Richard Leddy",
+    "license": "GPL-3.0-or-later",
+    "bugs": {
+        "url": "https://github.com/copious-world/copious-transitions-manager"
+    },
+    "homepage": "https://github.com/copious-world/copious-transitions-manager#readme",
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^16.0.0",
+        "@rollup/plugin-node-resolve": "^10.0.0",
+        "@smui/button": "^4.1.0",
+        "@smui/tab": "^4.1.0",
+        "@smui/tab-bar": "^4.1.0",
+        "@zerodevx/svelte-json-view": "^0.2.1",
+        "rollup": "^2.3.4",
+        "rollup-plugin-css-only": "^3.1.0",
+        "rollup-plugin-livereload": "^2.0.0",
+        "rollup-plugin-svelte": "^7.0.0",
+        "rollup-plugin-terser": "^7.0.0",
+        "svelte": "^3.0.0",
+        "svelte-grid": "^3.6.0"
+    },
+    "dependencies": {
+        "fastify": "^3.9.2",
+        "fastify-cors": "^5.1.0",
+        "highlight.js": "^11.6.0",
+        "middie": "^5.2.0",
+        "node-pre-gyp": "^0.17.0",
+        "sirv-cli": "^1.0.0",
+        "sveditor": "^0.0.31",
+        "svelte-exmarkdown": "^3.0.3",
+        "ucwid": "^0.2.5"
+    }
 }

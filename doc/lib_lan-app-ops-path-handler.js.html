@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>lib/lan-app-ops-path-handler.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    
+    <h2><a href="index.html">Overview</a></h2><h2><a href="https://github.com/copious-world/copious-hosts-manager" target="_blank" class="menu-item" id="repository" >Github repo</a></h2><h2><a href="https://www.npmjs.com/package/copious-hosts-manager" target="_blank" class="menu-item" id="package" >Npm package</a></h2><h3>Classes</h3>
+                        <ul id="classes-ul-overflow" class="menu-contained-nav" ><li><a href="ChildProcCom.html">ChildProcCom</a></li><li><a href="ChildProcControl.html">ChildProcControl</a></li><li><a href="HeadlessProcManager.html">HeadlessProcManager</a><ul class='methods'><li data-type='method' style='display: none;'><a href="HeadlessProcManager.html#app_post_start_subscription">app_post_start_subscription</a></li><li data-type='method' style='display: none;'><a href="HeadlessProcManager.html#app_post_start_subscription">app_post_start_subscription</a></li><li data-type='method' style='display: none;'><a href="HeadlessProcManager.html#app_publication_pre_fan_response">app_publication_pre_fan_response</a></li><li data-type='method' style='display: none;'><a href="HeadlessProcManager.html#app_publication_pre_fan_response">app_publication_pre_fan_response</a></li><li data-type='method' style='display: none;'><a href="HeadlessProcManager.html#app_subscription_handler">app_subscription_handler</a></li><li data-type='method' style='display: none;'><a href="HeadlessProcManager.html#app_subscription_handler">app_subscription_handler</a></li></ul></li><li></li><li><a href="PathHandlerProcManager.html">PathHandlerProcManager</a></li></ul>
+                    <h3>Global</h3><ul><li><a href="global.html#app_string_conversion">app_string_conversion</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">lib/lan-app-ops-path-handler.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>#!/usr/bin/env node
+
+const {PathHandler,path_hanlder_classes} = require('message-relay-services')
+
+
+const HostOps = require('../lib/host_ops')
+const AllProcsManager = require('../all_procs_manager')
+
+
+// This process becomes the forever process manager for processes launched off of a very private web service.
+//
+
+// For each type of shared table launched, this process maintains a list of interface types that may be configured 
+// for processes that it launches. Also, can launch other DB management processes. 
+// When this launches a processes, it can check that the configuration of the process has an interface conforming 
+// to the types of DB managers that this has launched.
+
+// Principle going forward: Every single application process can attach to a DB/Shared Mem table, while every DB or table 
+// is a standalone manager that provides lifecycle for the shared object. 
+
+// This proces, the copious-transions-manager, manages the DB lifecycle processes and spawns applications configured to attach 
+// to the share objects. 
+
+
+
+//
+// -------- -------- -------- -------- -------- -------- -------- -------- -------- -------- -------- --------
+//
+
+console.log(__dirname)
+
+/**
+ * ProcJSTableManager
+ * 
+ * This class provides a fuax DB interface for parents and children. 
+ * There is no message forwarding for communication between the classes. 
+ * 
+ */
+class PathHandlerProcManager extends PathHandler {
+    //
+    constructor(conf,all_procs) {
+        super(conf)
+        //
+        this._all_procs = new AllProcsManager(conf)
+        this._host_ops = new HostOps(conf,this._all_procs)
+        //
+        // ---- ---- ---- ---- ----
+        this._all_procs.initialize_children()
+        // ---- ---- ---- ---- ----
+    }
+
+    //
+    id_augmentation(msg_obj) {
+        let user_id = msg_obj._user_dir_key ? msg_obj[msg_obj._user_dir_key] : msg_obj._id
+        if ( (user_id === undefined) &amp;&amp; (msg_obj._id !== undefined) ) {
+            user_id = msg_obj._id
+        }
+        msg_obj._id = user_id
+    }
+
+    //
+    async app_message_handler(msg_obj) {
+        let op = msg_obj._tx_op
+        let result = "ERR"
+        //
+        this.id_augmentation(msg_obj)
+        //
+        switch ( op ) {
+            case 'S' : {
+                //
+                if ( await this._host_ops.app_run_sys_op(msg_obj) ) {
+                    result = "OK"
+                }
+                //
+                return({ "status" : result,  "explain" : "set", "when" : Date.now() })
+            }
+            case 'M' : {
+                result = "OK"
+
+
+                return({ "status" : result,  "explain" : "mod", "when" : Date.now() })
+            }
+            case 'G' : {        // get user information
+                let data = ""
+
+                let status = await this._host_ops.data_read_op(msg_obj)
+
+                if ( status ) {
+                    result = "OK"
+                    data = msg_obj.data
+                }
+
+                return({ "status" : result, "data" : data,  "explain" : "get", "when" : Date.now() })
+            }
+            case 'D' : {        // delete asset from everywhere if all ref counts to zero. (unpinned)
+
+                return({ "status" : result,  "explain" : "del", "when" : Date.now() })
+            }
+            default: {  // or send 'S'
+                let status = false
+
+                result = status ? "OK" : "ERR"
+            }
+        }
+        //
+        return({ "status" : result, "explain" : `${op} performed`, "when" : Date.now(), "_tracking" : msg_obj._tracking })
+    }
+}
+
+
+path_hanlder_classes["PROC-MANAGER"] = PathHandlerProcManager;
+
+
+module.exports.PathHandlerProcManager = PathHandlerProcManager
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Thu Jul 16 2026 23:04:24 GMT-0700 (Pacific Daylight Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

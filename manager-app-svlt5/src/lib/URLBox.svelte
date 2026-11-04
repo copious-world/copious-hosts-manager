@@ -1,9 +1,9 @@
 <script>
 
-let { manual_url = $bindable("localhost:8989"), ...props } = $props();
+let { manual_url = $bindable("localhost:8999"), ...props } = $props();
 
 
-let manual_port = $state("8989")
+let manual_port = $state("8999")
 let manual_host = $state("localhost")
 
 function update_manual_url(event) {

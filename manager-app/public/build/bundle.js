@@ -22395,7 +22395,7 @@ var app = (function () {
     	return block;
     }
 
-    // (1526:36) 
+    // (1525:36) 
     function create_if_block_6(ctx) {
     	let div;
     	let h1;
@@ -22430,28 +22430,28 @@ var app = (function () {
     			td1 = element("td");
     			create_component(markdown.$$.fragment);
     			attr_dev(h1, "class", "svelte-1kt20zm");
-    			add_location(h1, file, 1527, 2, 32503);
+    			add_location(h1, file, 1526, 2, 32502);
     			set_style(textarea, "width", "90%");
     			attr_dev(textarea, "class", "svelte-1kt20zm");
-    			add_location(textarea, file, 1531, 5, 32632);
+    			add_location(textarea, file, 1530, 5, 32631);
     			set_style(td0, "width", "50%");
     			set_style(td0, "text-align", "left");
     			set_style(td0, "vertical-align", "top");
     			attr_dev(td0, "class", "svelte-1kt20zm");
-    			add_location(td0, file, 1530, 4, 32568);
+    			add_location(td0, file, 1529, 4, 32567);
     			set_style(td1, "width", "50%");
     			set_style(td1, "text-align", "left");
     			set_style(td1, "vertical-align", "top");
     			attr_dev(td1, "class", "svelte-1kt20zm");
-    			add_location(td1, file, 1533, 4, 32693);
+    			add_location(td1, file, 1532, 4, 32692);
     			attr_dev(tr, "class", "svelte-1kt20zm");
-    			add_location(tr, file, 1529, 3, 32559);
+    			add_location(tr, file, 1528, 3, 32558);
     			set_style(table, "width", "100%");
     			attr_dev(table, "class", "svelte-1kt20zm");
-    			add_location(table, file, 1528, 2, 32528);
+    			add_location(table, file, 1527, 2, 32527);
     			set_style(div, "vertical-align", "top");
     			attr_dev(div, "class", "svelte-1kt20zm");
-    			add_location(div, file, 1526, 1, 32467);
+    			add_location(div, file, 1525, 1, 32466);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -22502,14 +22502,14 @@ var app = (function () {
     		block,
     		id: create_if_block_6.name,
     		type: "if",
-    		source: "(1526:36) ",
+    		source: "(1525:36) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1522:33) 
+    // (1521:33) 
     function create_if_block_5(ctx) {
     	let div;
 
@@ -22518,7 +22518,7 @@ var app = (function () {
     			div = element("div");
     			div.textContent = "Look at particular files here";
     			attr_dev(div, "class", "svelte-1kt20zm");
-    			add_location(div, file, 1522, 1, 32383);
+    			add_location(div, file, 1521, 1, 32382);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -22535,7 +22535,7 @@ var app = (function () {
     		block,
     		id: create_if_block_5.name,
     		type: "if",
-    		source: "(1522:33) ",
+    		source: "(1521:33) ",
     		ctx
     	});
 
@@ -22642,21 +22642,21 @@ var app = (function () {
     			attr_dev(div1, "class", "svelte-1kt20zm");
     			add_location(div1, file, 1494, 2, 31329);
     			attr_dev(button1, "class", "svelte-1kt20zm");
-    			add_location(button1, file, 1509, 3, 31950);
+    			add_location(button1, file, 1508, 3, 31949);
     			attr_dev(button2, "class", "svelte-1kt20zm");
-    			add_location(button2, file, 1510, 3, 31994);
+    			add_location(button2, file, 1509, 3, 31993);
     			attr_dev(button3, "class", "svelte-1kt20zm");
-    			add_location(button3, file, 1511, 3, 32040);
+    			add_location(button3, file, 1510, 3, 32039);
     			attr_dev(button4, "class", "svelte-1kt20zm");
-    			add_location(button4, file, 1513, 3, 32104);
+    			add_location(button4, file, 1512, 3, 32103);
     			attr_dev(button5, "class", "svelte-1kt20zm");
-    			add_location(button5, file, 1514, 3, 32155);
+    			add_location(button5, file, 1513, 3, 32154);
     			attr_dev(button6, "class", "svelte-1kt20zm");
-    			add_location(button6, file, 1515, 3, 32206);
+    			add_location(button6, file, 1514, 3, 32205);
     			attr_dev(div2, "class", "inner_div svelte-1kt20zm");
-    			add_location(div2, file, 1508, 2, 31923);
+    			add_location(div2, file, 1507, 2, 31922);
     			attr_dev(div3, "class", "inner_div svelte-1kt20zm");
-    			add_location(div3, file, 1517, 2, 32268);
+    			add_location(div3, file, 1516, 2, 32267);
     			attr_dev(div4, "class", "nice_message svelte-1kt20zm");
     			add_location(div4, file, 1493, 1, 31300);
     		},
@@ -23565,19 +23565,19 @@ var app = (function () {
     			add_location(div0, file, 1438, 0, 29186);
     			attr_dev(div1, "class", "dialoger nice_message svelte-1kt20zm");
     			set_style(div1, "display", /*show_dialog*/ ctx[14]);
-    			add_location(div1, file, 1542, 0, 32828);
+    			add_location(div1, file, 1541, 0, 32827);
     			attr_dev(div2, "class", "dialoger nice_message svelte-1kt20zm");
     			set_style(div2, "display", /*show_conf_dialog*/ ctx[16]);
-    			add_location(div2, file, 1546, 0, 33038);
+    			add_location(div2, file, 1545, 0, 33037);
     			attr_dev(div3, "class", "dialoger nice_message svelte-1kt20zm");
     			set_style(div3, "display", /*show_exec_dialog*/ ctx[17]);
-    			add_location(div3, file, 1551, 0, 33288);
+    			add_location(div3, file, 1550, 0, 33287);
     			attr_dev(div4, "class", "dialoger nice_message svelte-1kt20zm");
     			set_style(div4, "display", /*show_npm_dialog*/ ctx[18]);
-    			add_location(div4, file, 1556, 0, 33543);
+    			add_location(div4, file, 1555, 0, 33542);
     			attr_dev(div5, "class", "dialoger nice_message svelte-1kt20zm");
     			set_style(div5, "display", /*show_update_dialog*/ ctx[15]);
-    			add_location(div5, file, 1561, 0, 33813);
+    			add_location(div5, file, 1560, 0, 33812);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

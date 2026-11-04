@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Home - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    
+    <h2><a href="index.html">Overview</a></h2><h2><a href="https://github.com/copious-world/copious-hosts-manager" target="_blank" class="menu-item" id="repository" >Github repo</a></h2><h2><a href="https://www.npmjs.com/package/copious-hosts-manager" target="_blank" class="menu-item" id="package" >Npm package</a></h2><h3>Classes</h3>
+                        <ul id="classes-ul-overflow" class="menu-contained-nav" ><li><a href="ChildProcCom.html">ChildProcCom</a></li><li><a href="ChildProcControl.html">ChildProcControl</a></li><li><a href="HeadlessProcManager.html">HeadlessProcManager</a><ul class='methods'><li data-type='method' style='display: none;'><a href="HeadlessProcManager.html#app_post_start_subscription">app_post_start_subscription</a></li><li data-type='method' style='display: none;'><a href="HeadlessProcManager.html#app_post_start_subscription">app_post_start_subscription</a></li><li data-type='method' style='display: none;'><a href="HeadlessProcManager.html#app_publication_pre_fan_response">app_publication_pre_fan_response</a></li><li data-type='method' style='display: none;'><a href="HeadlessProcManager.html#app_publication_pre_fan_response">app_publication_pre_fan_response</a></li><li data-type='method' style='display: none;'><a href="HeadlessProcManager.html#app_subscription_handler">app_subscription_handler</a></li><li data-type='method' style='display: none;'><a href="HeadlessProcManager.html#app_subscription_handler">app_subscription_handler</a></li></ul></li><li></li><li><a href="PathHandlerProcManager.html">PathHandlerProcManager</a></li></ul>
+                    <h3>Global</h3><ul><li><a href="global.html#app_string_conversion">app_string_conversion</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+
+    
+
+
+
+    
+
+
+    <section class="package">
+        <h3> </h3>		
+    </section>
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    <section class="readme usertext">
+        <article><h1>copious-hosts-manager</h1>
+<p><strong>NOTE: This version is temporarily downgraded and published only for convenience in testing.</strong></p>
+<p><em><strong>A simple web app for managing processes on configured machines</strong></em>.</p>
+<p>The runtime provides those two functions:</p>
+<ol>
+<li>A web page server with a web page for starting, stopping, updating, etc. processes on clusters accessed by preconigured machines.</li>
+<li>A means of communicating with remote process administration via ssh tunnels.</li>
+</ol>
+<p>This manager tool treats processes as child processes of the copious-hosts-manager process. A node in a cluster will not be web enabled, but will provide a TLS port for communicating data and streaming any console information to a workstation web server. The <code>copious-hm</code> command will start the web server on a user's machine. It will be a web server that serves static content from its own local directory.</p>
+<blockquote>
+<p><strong>note:</strong> previously this application was just used to tests processes and so it doubled as a storage table. The new version spawns processes that serve tables and attempts to provide some managent of clients within the clusters.</p>
+</blockquote>
+<p>So far, this tool is good for managing a basic configuration for those trying out processes which may also communicate with each other. The runtime is compatible with processes that use communication interfaces provided by <a href="https://www.npmjs.com/package/message-relay-services">message-relay-services</a>.</p>
+<h2>Install</h2>
+<pre class="prettyprint source"><code>npm install -g copious-hosts-manager
+</code></pre>
+<p>In preparation for running, there is a need for configuration files.</p>
+<p>We prepare configuration files with comments and then run them through a comment stripping tool. We are using <a href="https://github.com/sindresorhus/strip-json-comments-cli">strip-json-comments-cli</a>.</p>
+<h2>Basic Ops</h2>
+<ul>
+<li>List a set of host IP's and domains running the headless version</li>
+<li>Install a process from npm</li>
+<li>Remove a process</li>
+<li>Start a process</li>
+<li>Stop a process</li>
+<li>List processes</li>
+<li>Set top level config parameters....</li>
+</ul>
+<blockquote>
+<p><strong>note:</strong> ssh services have to be set up on the remote machines and on their cluster members. The copious-hm command will use special keys other than ssh login keys.</p>
+</blockquote>
+<h2>Run</h2>
+<p>For running on the user's workstation:</p>
+<pre class="prettyprint source"><code>copious-hm manager.conf
+</code></pre>
+<p>Here, the user might be called the <em><strong>admin</strong></em>.</p>
+<p>On the remote providing external access to the cluster:</p>
+<pre class="prettyprint source"><code>copious-hm --headless manager.conf
+</code></pre>
+<p>The configuration file is a JSON object that describes how to call programs from the command line.</p>
+<p>As it might be best to start the program with data from a USB stick or other device, the following is another way to call up the program:</p>
+<pre class="prettyprint source"><code>copious-hm manager.conf --drive=&quot;path to USB&quot;
+</code></pre>
+<p>Once the <code>copious-hm</code> process is running, the admin user should surf the configured port on the local host. So, in the navbar of your browser, enter the following:</p>
+<pre class="prettyprint source"><code>https://localhost:&lt;configed port>/
+</code></pre>
+<p><strong>example:</strong></p>
+<p>In the following, configuration file description, a port has been selected for the copious-hm instance:</p>
+<pre class="prettyprint source"><code>&quot;web_page_port&quot; : 8989,
+</code></pre>
+<p>In this case, the navbar url would be the following:</p>
+<pre class="prettyprint source"><code>https://localhost: 8989/
+</code></pre>
+<p>The api url's are relative to the port.</p>
+<h2>Configuration File</h2>
+<p>You can get an example manager.conf file into you working directory by using <a href="https://www.npmjs.com/package/get-npm-assets">get-npm-assets</a></p>
+<pre class="prettyprint source"><code>get-npm-assets copious-hm
+</code></pre>
+<p>Here is what it looks like:</p>
+<pre class="prettyprint source"><code>{
+    &quot;password&quot; : &quot;your password&quot;,
+    &quot;web_page_port&quot; : 8989,
+    &quot;wss_app_port&quot; : 8990,
+    &quot;host_list&quot; : &quot;host-file.json&quot;,
+    &quot;pem_file&quot; : &quot;custom-pub-key.pem&quot;,
+    &quot;all_procs&quot; : {
+
+        &quot;test1.sh&quot; : {
+            &quot;name&quot; : &quot;test1.sh&quot;,
+            &quot;run_on_start&quot; : false,
+            &quot;attempt_reconnect&quot; : false,
+            &quot;runner&quot; : &quot;bash&quot;,
+            &quot;args&quot; : [&quot;test/test1.sh&quot;,&quot;Print this message&quot;]
+        },
+        &quot;test2.js&quot; : {
+            &quot;name&quot; : &quot;test2.js&quot;,
+            &quot;run_on_start&quot; : false,
+            &quot;attempt_reconnect&quot; : true,  
+            &quot;runner&quot; : &quot;node&quot;,
+            &quot;args&quot;: [
+                &quot;test/test2.js&quot;,
+                &quot;test/test2.conf&quot;
+            ]
+        },
+        &quot;test3.js&quot; : {
+            &quot;name&quot; : &quot;test3.js&quot;,
+            &quot;run_on_start&quot; : false,
+            &quot;attempt_reconnect&quot; : false,  
+            &quot;runner&quot; : &quot;node&quot;,
+            &quot;args&quot;: [
+                &quot;test/test3.js&quot;,
+                &quot;test/test3.conf&quot;
+            ]
+        }
+
+    }
+}
+
+</code></pre>
+<p><strong>The top level fields are as follows</strong>:</p>
+<ul>
+<li><strong>password</strong> :: you have to type this in on the web page to make anything work</li>
+<li><strong>web_page_port</strong> :: this is the html server port. Surf to your computer's IP and specifiy this port, e.g.: <code>http://&lt;my machine's ip&gt;:8989</code></li>
+<li><strong>wss_app_port</strong> :: this is for websockets.</li>
+<li><strong>all_procs</strong> :: this is a map of process names to process descriptions. The web page will know about these at startup.</li>
+</ul>
+<p>Have a look at the different process descriptions. You will see that they refer to programs and their descriptions.</p>
+<p>Let's have a closer look at the fields for describing the processes.</p>
+<ul>
+<li><strong>name</strong>  :: a name that identifies the process</li>
+<li><strong>run_on_start</strong> :: whether or not to start a process as soon as the manager comes up or wait for the admin to start it from the web page</li>
+<li><strong>attempt_reconnect</strong> :: if the process fails, should the manager try to restart it?</li>
+<li><strong>runner</strong> :: a program name that uses the parameters. This will be what runs at the outermost part of the process. It may run a script mentioned in the arguments, or it may be the name of a binary executable.</li>
+<li><strong>args</strong> parameters that are fed to the runner</li>
+</ul>
+<p>For example, &quot;test3.js&quot; has a &quot;node&quot; runner <strong>node.js</strong>. The first parameter of the argments list is a javascript file in the test directory. So, &quot;test3.js&quot; will be available to run from the test page.</p>
+<p>Once the manager is running, you can surf to the web page:</p>
+<pre class="prettyprint source"><code> http://&lt;my machine's ip>:8989
+</code></pre>
+<p>On the web page you can select the process, find the &quot;op&quot; section and click on the &quot;run&quot; button.</p>
+<h2>The Web Page</h2>
+<p>You can see what the web page looks like here: <a href="http://www.copious.world/transition-manager/">web page</a></p>
+<blockquote>
+<p><strong>Note</strong>: nothing works on this page. The computer is not available for public operation. <em>For viewing purposes only</em>...</p>
+</blockquote>
+<p>On the front page you can see buttons:</p>
+<ul>
+<li><strong>overview</strong></li>
+<li><strong>stdout</strong></li>
+<li><strong>ops</strong></li>
+</ul>
+<p>Clicking on these shows different panels.</p>
+<p>The first panel, <strong>overview</strong>, shows a list box (processes will be seen there if you try it). Selecting a process makes it available for use in the <strong>ops</strong> panel. It can be removed as well using &quot;remove&quot; on the front panel.</p>
+<p>On the <strong>overview</strong>, you can <strong>add</strong> a processes to the configuration file. You can run a command line using he <strong>exec</strong> button. You can install npm modules or uninstall them. The buttons lead to dialogs to help you enter field values.</p>
+<p>On the <strong>stdout</strong> panel, you can view the terminal output of a process.</p>
+<p>On the <strong>ops</strong> panel, you can <strong>run</strong>, <strong>stop</strong>, <strong>restart</strong>, <strong>update</strong> or <strong>remove</strong> a process (remove is the same as the front panel). Or, you can get access to the configuration file, <strong>config</strong>.</p>
+<p>The <strong>confg</strong> button will look at the arguments array and ask if that is the config file you want to edit. A rudimentary editor will be opened in a panel with the config file contents. The editor expects that you will specify the configuration in JSON. The configuration will only update with parseable JSON. The JSON will be seen on a box on the left.</p>
+<p><strong>TO SEE THE WHOLE PAGE</strong>, you need to try out examples.</p>
+<h2>A Look at Example Apps</h2>
+<p>Here are two test program that can be managed by the <strong>copious-transitions-manager</strong>.</p>
+<p>In the following, test2.js is the process that gets values from the communication channel, while test3.js writes values to the communication channel. You can see that test2.js calls <strong>messenger.get_on_path</strong>, while test3.js calls <strong>messenger.set_on_path</strong>.</p>
+<p><strong>test2.js</strong></p>
+<pre class="prettyprint source"><code>const {IPCChildClient} = require('message-relay-services')
+const {load_json_file} = require('../lib/utils')
+const {XXHash32} = require('xxhash32-node-cmake')
+
+console.log(&quot;TEST 3 STARTS&quot;)
+
+let hasher = new XXHash32(9347597)
+
+let conf = load_json_file(process.argv[2])
+
+if ( conf === undefined ) process.exit(0)
+
+let messenger = new IPCChildClient(conf)
+
+
+console.log(&quot;THIS IS TEST 2&quot;)
+
+let any_old_key = [
+    &quot;this is a key for this is a test&quot;,
+    &quot;another key 94r9w487r you should know tests when you see them&quot;,
+    &quot;more keys are as much fun as testing lots of junk&quot;
+]
+
+setInterval(async () => {
+    let the_time =  new Date()
+    let time_report = the_time.toLocaleString()
+    //
+    let rand_pick = Math.trunc(Math.random()*(any_old_key.length - 1))
+    let txt = any_old_key[rand_pick]
+    let hash = hasher.hash(txt)
+    //
+    let status = await messenger.get_on_path({
+        &quot;table&quot; : &quot;key_value&quot;,
+        &quot;hash&quot; : hash
+    },&quot;test2&quot;)
+    //
+    console.log(status)
+    //
+    console.log(&quot;test2: One more tick: &quot;  + time_report)
+
+},2000)
+
+</code></pre>
+<p><strong>test3.js</strong></p>
+<pre class="prettyprint source"><code>
+//
+const {IPCChildClient} = require('message-relay-services')
+const {load_json_file} = require('../lib/utils')
+const {XXHash32} = require('xxhash32-node-cmake')
+
+
+console.log(&quot;TEST 3 STARTS&quot;)
+
+
+let hasher = new XXHash32(9347597)
+
+let conf = load_json_file(process.argv[2])
+
+if ( conf === undefined ) process.exit(0)
+
+let messenger = new IPCChildClient(conf)
+
+let any_old_key = [
+    &quot;this is a key for this is a test&quot;,
+    &quot;another key 94r9w487r you should know tests when you see them&quot;,
+    &quot;more keys are as much fun as testing lots of junk&quot;
+]
+
+let things_to_send = [
+    &quot;this is a test&quot;,
+    &quot;you should know tests when you see them&quot;,
+    &quot;have fun testing lots of junk&quot;
+]
+
+setInterval(async () => {
+    //
+    let the_time =  new Date()
+    let time_report = the_time.toLocaleString()
+    //
+    let rand_pick = Math.trunc(Math.random()*(any_old_key.length - 1))
+    let txt = any_old_key[rand_pick]
+    let hash = hasher.hash(txt)
+    //
+    let status = await messenger.set_on_path({
+        &quot;table&quot; : &quot;key_value&quot;,
+        &quot;hash&quot; : hash,
+        &quot;v&quot; : things_to_send[rand_pick]
+    },&quot;test2&quot;)
+    //
+    console.log(status)
+    //
+    console.log(&quot;test3: One more tick: &quot;  + time_report)
+},2000)
+
+</code></pre>
+<h3>check it out</h3>
+<p>You can run these from the web page and see the messages they print in the <strong>stdout</strong> panel.</p>
+<p>Later, hypothetically, you could use a different class from <a href="https://www.npmjs.com/package/message-relay-services">message-relay-services</a> and a more sophisticated server to run the same programs. All you have to do is change the class in the require line:</p>
+<pre class="prettyprint source"><code>const {IPCChildClient} = require('message-relay-services')
+</code></pre>
+<p>For example:</p>
+<pre class="prettyprint source"><code>const {MessageRelayer} = require('message-relay-services')
+</code></pre>
+<p>Givent the endpoint server the programs attach to provides an appropiate hash table functionality, the programs would not have to change more.</p>
+<h2>Debug an App</h2>
+<p>Here is an example for debugging an app that might otherwise be called directly as a runner.</p>
+<pre class="prettyprint source"><code>    &quot;igid-auth-debug&quot;: {
+      &quot;name&quot;: &quot;igid-auth-debug&quot;,
+      &quot;runner&quot;: &quot;node&quot;,
+      &quot;args&quot;: [
+        &quot;--inspect-brk&quot;,
+        &quot;/home/a-user/.npm-global/lib/node_modules/captcha-igid/index.js&quot;,
+        &quot;assets/basic-user-service-igid.conf &quot;
+      ]
+    }
+
+</code></pre>
+<h2>Issues?</h2>
+<p><a href="https://github.com/copious-world/copious-transitions-manager/issues">issues on github</a></p>
+<h2>dependencies</h2>
+<p>The web page have been developed in Svelte. Find the project in the <strong>manager-app</strong> diretory.</p>
+<h2>Thanks from <a href="http://www.copious.world">copious.world</a></h2></article>
+    </section>
+
+
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Thu Jul 16 2026 23:04:24 GMT-0700 (Pacific Daylight Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

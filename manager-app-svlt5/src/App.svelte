@@ -5,7 +5,7 @@ import LoginBox from "./lib/LoginBox.svelte"
 import URLBox from "./lib/URLBox.svelte"
 import HostListCtrl from "./lib/HostListCtrl.svelte"
 import PluginPanel from "./lib/PluginPanel.svelte";
-let g_admin_pass = $state("");
+let g_admin_pass = $state("testit");
 let g_manual_url = $state("localhost");
 
 let g_active_url  = $state("");
@@ -23,7 +23,8 @@ let g_panel_selections = [
   "host-edit",
   "host-cmd-line",
   "host-top",
-  "host-plugins"
+  "host-plugins",
+  "host-cloud"
 ]
 
 let g_panels = {
@@ -34,7 +35,8 @@ let g_panels = {
   "host-edit" : "Editor",
   "host-cmd-line" : "command line",
   "host-top" : "HTOP",
-  "host-plugins" : "plugins"
+  "host-plugins" : "plugins",
+  "host-cloud" : "service"
 }
 
 
@@ -46,7 +48,8 @@ let g_panel_menu = {
   "host-edit" : "editor",
   "host-cmd-line" : "commands",
   "host-top" : "htop",
-  "host-plugins"  : "plugins"
+  "host-plugins"  : "plugins",
+  "host-cloud" : "service"
 }
 
 
@@ -58,7 +61,8 @@ let g_panels_displayed = {
   "host-edit" : "none",
   "host-cmd-line" : "none",
   "host-top" : "none",
-  "host-plugins" : "none"
+  "host-plugins" : "none",
+  "host-cloud" : "none"
 }
 
 function update_panels(panel) {
@@ -145,6 +149,25 @@ function update_panels(panel) {
 </div>
 <div style="display:{g_panels_displayed['host-plugins']}" >
   <PluginPanel bind:active_plugin={g_plugin_name} _admin_pass={g_admin_pass} _manual_url={g_manual_url} />
+</div>
+<div style="display:{g_panels_displayed['host-cloud']}" >
+  <ul>
+    <li>
+        <a href="https://my.vultr.com" target="_blank"> vultr EKVL8DL@7VkxXmi</a>
+    </li>
+    <li>
+      name cheap
+    </li>
+    <li>
+      go daddy
+    </li>
+    <li>
+      github
+    </li>
+    <li>
+      npm
+    </li>
+  </ul>
 </div>
 
 
