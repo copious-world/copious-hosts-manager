@@ -1,6 +1,6 @@
 {
     "name": "copious-hosts-manager",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "A web app for managing child processes across ssh tunnels to a configured host list.",
     "bin": {
         "copious-hm": "./bin/index.js"
@@ -10,6 +10,7 @@
     },
     "scripts": {
         "test": "node bin/index.js",
+        "test-inspect": "node --inspect-brk bin/index.js",
         "gen-docs": "jsdoc --configure ./tools/jsdoc.conf -a all -R README.md --verbose"
     },
     "repository": {

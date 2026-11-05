@@ -313,7 +313,8 @@ h2 {
 }
 </style>
 <script>
-	var g_siteURL = window.location.host;
+	//var g_siteURL = window.location.host;
+    var g_siteURL = "localhost:8999"
 	var g_finalizers = []
 	var g_loginStateViewHolders = {}
 </script>
@@ -3506,6 +3507,9 @@ function manager_ws_handler(message) {
             poc_list.push(data[proc])
         }
         let future = [poc_list,data]
+if ( poc_list.length === 0 ) {
+    console.log("EMPTY DATA")
+}
 
         if ( window._expose_to_page ) {
             window._expose_to_page(future)
@@ -3523,7 +3527,7 @@ var g_web_socket = null
 function setup_webbsocekts() {
     try {
         // setup a webSocket connection to get finalization data on logging in. -- 
-        g_web_socket = new WebSocket(`ws://${location.hostname}:8990`);
+        g_web_socket = new WebSocket(`ws://${location.hostname}:8991`);
         g_web_socket.onmessage = (event) => {	// handle the finalization through the websocket
                 try {
                     let message = JSON.parse(event.data)
@@ -3543,7 +3547,7 @@ setTimeout(setup_webbsocekts,2000)
 
 
 async function fetch_procs_from_server() {
-    let endpoint = `http://${location.host}/app/procs/`
+    let endpoint = `http://${g_siteURL}/app/procs/`
     let data = await fetchUrl(endpoint)
     let poc_list = []
     for ( let proc in data ) {
@@ -3554,7 +3558,7 @@ async function fetch_procs_from_server() {
 
 async function post_proc_command(params) {
 
-    let endpoint = `http://${location.host}/app/run-sys-op/`
+    let endpoint = `http://${g_siteURL}/app/run-sys-op/`
 
     let result = await postData(endpoint,params)
     if ( result.status = "OK" ) {
@@ -3566,7 +3570,7 @@ async function post_proc_command(params) {
 
 async function fetch_app_config(config_file) {
     let file = encodeURIComponent(config_file)
-    let endpoint = `http://${location.host}/app/get-config/` + file
+    let endpoint = `http://${g_siteURL}/app/get-config/` + file
     let data = await fetchUrl(endpoint)
     return data
 }

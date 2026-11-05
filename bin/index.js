@@ -103,7 +103,7 @@ const MANAGER_PORT = g_config.web_page_port
 let g_proc_managers = {}
 
 let g_all_procs = new AllProcsManager(g_config)
-let g_host_ops = new HostOps(g_config.host_support,g_all_procs)
+let g_host_ops = new HostOps(g_config,g_all_procs)
 let g_message_relayer = new MultiRelayClient(g_config.clusters,MessageRelayer);
 
 
@@ -357,7 +357,7 @@ if ( g_config.wss_app_port ) {   // WEB APP SCOCKETS OPTION (START)
     g_ws_socks.set_socket_server(g_app_wss,handler_ws_messages)
     //
 
-    setInterval(() => { ws_proc_status() },5000)
+    setInterval(ws_proc_status,5000)
 
     setup_console(ws_console_log)
 

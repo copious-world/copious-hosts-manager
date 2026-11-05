@@ -723,22 +723,21 @@
 			return
 		}
 		//
-		if ( proc_def ) {
-			let params = {
-				"admin_pass" : admin_pass,
-				"op" : {
-					"name" : "reload",
-					"param" : {}
-				}
-			}
-			try {
-				let result = await post_proc_command(params)
-				if ( !result ) alert("Error")
-				await get_active_procs()
-			} catch (e) {
-				alert(e.message)
+		let params = {
+			"admin_pass" : admin_pass,
+			"op" : {
+				"name" : "reload",
+				"param" : {}
 			}
 		}
+		try {
+			let result = await post_proc_command(params)
+			if ( !result ) alert("Error")
+			await get_active_procs()
+		} catch (e) {
+			alert(e.message)
+		}
+		//
 	}
 
 	// ---- ---- ---- ---- ---- ---- ----
@@ -1438,15 +1437,15 @@
 
 <div>
 	<!--
-	  Note: tabs must be unique. (They cannot === each other.)  // , "Source" ... do this later
+	  Note: tabs must be unique. (They cannot === each other.)  // , "Source" ... do this later  , 'Write Doc'
 	-->
-	<TabBar tabs={['Overview', 'stdout', 'Ops', 'Write Doc']} let:tab bind:active>
+	<TabBar tabs={['Overview', 'stdout', 'Ops']} let:tab bind:active>      
 	  <!-- Note: the `tab` property is required! -->
 	  <Tab {tab}>
 		<Label><span class={ (tab === active) ? "active-tab" : "plain-tab"}>{tab}</span></Label>
 	  </Tab>
 	</TabBar>
-  <br>
+	<br>
 
 	{#if (active === 'Overview')}
 	<div class="splash-if-you-will" style="height:fit-content" >
