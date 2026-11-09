@@ -22231,15 +22231,15 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[98] = list[i];
+    	child_ctx[100] = list[i];
     	child_ctx[2] = i;
     	return child_ctx;
     }
 
-    // (1445:2) <Label>
+    // (1188:2) <Label>
     function create_default_slot_2(ctx) {
     	let span;
-    	let t_value = /*tab*/ ctx[100] + "";
+    	let t_value = /*tab*/ ctx[102] + "";
     	let t;
     	let span_class_value;
 
@@ -22248,22 +22248,22 @@ var app = (function () {
     			span = element("span");
     			t = text$1(t_value);
 
-    			attr_dev(span, "class", span_class_value = "" + (null_to_empty(/*tab*/ ctx[100] === /*active*/ ctx[1]
+    			attr_dev(span, "class", span_class_value = "" + (null_to_empty(/*tab*/ ctx[102] === /*active*/ ctx[1]
     			? "active-tab"
-    			: "plain-tab") + " svelte-1kt20zm"));
+    			: "plain-tab") + " svelte-1i7lf6y"));
 
-    			add_location(span, file, 1444, 9, 29425);
+    			add_location(span, file, 1187, 9, 25182);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
     			append_dev(span, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[3] & /*tab*/ 128 && t_value !== (t_value = /*tab*/ ctx[100] + "")) set_data_dev(t, t_value);
+    			if (dirty[3] & /*tab*/ 512 && t_value !== (t_value = /*tab*/ ctx[102] + "")) set_data_dev(t, t_value);
 
-    			if (dirty[0] & /*active*/ 2 | dirty[3] & /*tab*/ 128 && span_class_value !== (span_class_value = "" + (null_to_empty(/*tab*/ ctx[100] === /*active*/ ctx[1]
+    			if (dirty[0] & /*active*/ 2 | dirty[3] & /*tab*/ 512 && span_class_value !== (span_class_value = "" + (null_to_empty(/*tab*/ ctx[102] === /*active*/ ctx[1]
     			? "active-tab"
-    			: "plain-tab") + " svelte-1kt20zm"))) {
+    			: "plain-tab") + " svelte-1i7lf6y"))) {
     				attr_dev(span, "class", span_class_value);
     			}
     		},
@@ -22276,14 +22276,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(1445:2) <Label>",
+    		source: "(1188:2) <Label>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1444:3) <Tab {tab}>
+    // (1187:3) <Tab {tab}>
     function create_default_slot_1(ctx) {
     	let label;
     	let current;
@@ -22307,7 +22307,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const label_changes = {};
 
-    			if (dirty[0] & /*active*/ 2 | dirty[3] & /*$$scope, tab*/ 384) {
+    			if (dirty[0] & /*active*/ 2 | dirty[3] & /*$$scope, tab*/ 1536) {
     				label_changes.$$scope = { dirty, ctx };
     			}
 
@@ -22331,21 +22331,21 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(1444:3) <Tab {tab}>",
+    		source: "(1187:3) <Tab {tab}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1442:1) <TabBar tabs={['Overview', 'stdout', 'Ops']} let:tab bind:active>
+    // (1185:1) <TabBar tabs={['Overview', 'stdout', 'Ops']} let:tab bind:active>
     function create_default_slot(ctx) {
     	let tab;
     	let current;
 
     	tab = new Tab({
     			props: {
-    				tab: /*tab*/ ctx[100],
+    				tab: /*tab*/ ctx[102],
     				$$slots: { default: [create_default_slot_1] },
     				$$scope: { ctx }
     			},
@@ -22362,9 +22362,9 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const tab_changes = {};
-    			if (dirty[3] & /*tab*/ 128) tab_changes.tab = /*tab*/ ctx[100];
+    			if (dirty[3] & /*tab*/ 512) tab_changes.tab = /*tab*/ ctx[102];
 
-    			if (dirty[0] & /*active*/ 2 | dirty[3] & /*$$scope, tab*/ 384) {
+    			if (dirty[0] & /*active*/ 2 | dirty[3] & /*$$scope, tab*/ 1536) {
     				tab_changes.$$scope = { dirty, ctx };
     			}
 
@@ -22388,14 +22388,14 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(1442:1) <TabBar tabs={['Overview', 'stdout', 'Ops']} let:tab bind:active>",
+    		source: "(1185:1) <TabBar tabs={['Overview', 'stdout', 'Ops']} let:tab bind:active>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1524:36) 
+    // (1268:36) 
     function create_if_block_6(ctx) {
     	let div;
     	let h1;
@@ -22412,7 +22412,7 @@ var app = (function () {
     	let dispose;
 
     	markdown = new Markdown({
-    			props: { md: /*md*/ ctx[21] },
+    			props: { md: /*md*/ ctx[22] },
     			$$inline: true
     		});
 
@@ -22429,29 +22429,29 @@ var app = (function () {
     			t2 = space$1();
     			td1 = element("td");
     			create_component(markdown.$$.fragment);
-    			attr_dev(h1, "class", "svelte-1kt20zm");
-    			add_location(h1, file, 1525, 2, 32476);
+    			attr_dev(h1, "class", "svelte-1i7lf6y");
+    			add_location(h1, file, 1269, 2, 28398);
     			set_style(textarea, "width", "90%");
-    			attr_dev(textarea, "class", "svelte-1kt20zm");
-    			add_location(textarea, file, 1529, 5, 32605);
+    			attr_dev(textarea, "class", "svelte-1i7lf6y");
+    			add_location(textarea, file, 1273, 5, 28527);
     			set_style(td0, "width", "50%");
     			set_style(td0, "text-align", "left");
     			set_style(td0, "vertical-align", "top");
-    			attr_dev(td0, "class", "svelte-1kt20zm");
-    			add_location(td0, file, 1528, 4, 32541);
+    			attr_dev(td0, "class", "svelte-1i7lf6y");
+    			add_location(td0, file, 1272, 4, 28463);
     			set_style(td1, "width", "50%");
     			set_style(td1, "text-align", "left");
     			set_style(td1, "vertical-align", "top");
-    			attr_dev(td1, "class", "svelte-1kt20zm");
-    			add_location(td1, file, 1531, 4, 32666);
-    			attr_dev(tr, "class", "svelte-1kt20zm");
-    			add_location(tr, file, 1527, 3, 32532);
+    			attr_dev(td1, "class", "svelte-1i7lf6y");
+    			add_location(td1, file, 1275, 4, 28588);
+    			attr_dev(tr, "class", "svelte-1i7lf6y");
+    			add_location(tr, file, 1271, 3, 28454);
     			set_style(table, "width", "100%");
-    			attr_dev(table, "class", "svelte-1kt20zm");
-    			add_location(table, file, 1526, 2, 32501);
+    			attr_dev(table, "class", "svelte-1i7lf6y");
+    			add_location(table, file, 1270, 2, 28423);
     			set_style(div, "vertical-align", "top");
-    			attr_dev(div, "class", "svelte-1kt20zm");
-    			add_location(div, file, 1524, 1, 32440);
+    			attr_dev(div, "class", "svelte-1i7lf6y");
+    			add_location(div, file, 1268, 1, 28362);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -22461,24 +22461,24 @@ var app = (function () {
     			append_dev(table, tr);
     			append_dev(tr, td0);
     			append_dev(td0, textarea);
-    			set_input_value(textarea, /*md*/ ctx[21]);
+    			set_input_value(textarea, /*md*/ ctx[22]);
     			append_dev(tr, t2);
     			append_dev(tr, td1);
     			mount_component(markdown, td1, null);
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(textarea, "input", /*textarea_input_handler*/ ctx[60]);
+    				dispose = listen_dev(textarea, "input", /*textarea_input_handler*/ ctx[62]);
     				mounted = true;
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*md*/ 2097152) {
-    				set_input_value(textarea, /*md*/ ctx[21]);
+    			if (dirty[0] & /*md*/ 4194304) {
+    				set_input_value(textarea, /*md*/ ctx[22]);
     			}
 
     			const markdown_changes = {};
-    			if (dirty[0] & /*md*/ 2097152) markdown_changes.md = /*md*/ ctx[21];
+    			if (dirty[0] & /*md*/ 4194304) markdown_changes.md = /*md*/ ctx[22];
     			markdown.$set(markdown_changes);
     		},
     		i: function intro(local) {
@@ -22502,14 +22502,14 @@ var app = (function () {
     		block,
     		id: create_if_block_6.name,
     		type: "if",
-    		source: "(1524:36) ",
+    		source: "(1268:36) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1520:33) 
+    // (1264:33) 
     function create_if_block_5(ctx) {
     	let div;
 
@@ -22517,8 +22517,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			div.textContent = "Look at particular files here";
-    			attr_dev(div, "class", "svelte-1kt20zm");
-    			add_location(div, file, 1520, 1, 32356);
+    			attr_dev(div, "class", "svelte-1i7lf6y");
+    			add_location(div, file, 1264, 1, 28278);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -22535,16 +22535,16 @@ var app = (function () {
     		block,
     		id: create_if_block_5.name,
     		type: "if",
-    		source: "(1520:33) ",
+    		source: "(1264:33) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1492:32) 
+    // (1235:32) 
     function create_if_block_3(ctx) {
-    	let div4;
+    	let div5;
     	let div1;
     	let span0;
     	let t0;
@@ -22556,7 +22556,7 @@ var app = (function () {
     	let t4;
     	let button0;
     	let t6;
-    	let div2;
+    	let div3;
     	let button1;
     	let t8;
     	let button2;
@@ -22569,7 +22569,12 @@ var app = (function () {
     	let t16;
     	let button6;
     	let t18;
-    	let div3;
+    	let div2;
+    	let t19;
+    	let input;
+    	let t20;
+    	let t21;
+    	let div4;
     	let jsonview;
     	let current;
     	let mounted;
@@ -22584,13 +22589,13 @@ var app = (function () {
     	let if_block = current_block_type(ctx);
 
     	jsonview = new JsonView({
-    			props: { json: /*active_proc_data*/ ctx[20] },
+    			props: { json: /*active_proc_data*/ ctx[21] },
     			$$inline: true
     		});
 
     	const block = {
     		c: function create() {
-    			div4 = element("div");
+    			div5 = element("div");
     			div1 = element("div");
     			span0 = element("span");
     			t0 = text$1(/*active_proc_name*/ ctx[10]);
@@ -22604,7 +22609,7 @@ var app = (function () {
     			button0 = element("button");
     			button0.textContent = "👁";
     			t6 = space$1();
-    			div2 = element("div");
+    			div3 = element("div");
     			button1 = element("button");
     			button1.textContent = "run";
     			t8 = space$1();
@@ -22623,46 +22628,58 @@ var app = (function () {
     			button6 = element("button");
     			button6.textContent = "config";
     			t18 = space$1();
-    			div3 = element("div");
+    			div2 = element("div");
+    			t19 = text$1("◬ debugger [");
+    			input = element("input");
+    			t20 = text$1("]");
+    			t21 = space$1();
+    			div4 = element("div");
     			create_component(jsonview.$$.fragment);
     			set_style(span0, "font-size", "larger");
-    			attr_dev(span0, "class", "svelte-1kt20zm");
-    			add_location(span0, file, 1494, 3, 31312);
+    			attr_dev(span0, "class", "svelte-1i7lf6y");
+    			add_location(span0, file, 1237, 3, 27069);
     			set_style(span1, "font-size", "larger");
     			set_style(span1, "color", /*running_color*/ ctx[11]);
-    			attr_dev(span1, "class", "svelte-1kt20zm");
-    			add_location(span1, file, 1495, 3, 31372);
+    			attr_dev(span1, "class", "svelte-1i7lf6y");
+    			add_location(span1, file, 1238, 3, 27129);
     			set_style(div0, "display", "inline-block");
     			set_style(div0, "text-align", "left");
-    			attr_dev(div0, "class", "svelte-1kt20zm");
-    			add_location(div0, file, 1497, 3, 31452);
+    			attr_dev(div0, "class", "svelte-1i7lf6y");
+    			add_location(div0, file, 1240, 3, 27209);
     			set_style(button0, "font-size", "larger");
-    			attr_dev(button0, "class", "svelte-1kt20zm");
-    			add_location(button0, file, 1504, 3, 31800);
-    			attr_dev(div1, "class", "svelte-1kt20zm");
-    			add_location(div1, file, 1493, 2, 31303);
-    			attr_dev(button1, "class", "svelte-1kt20zm");
-    			add_location(button1, file, 1507, 3, 31923);
-    			attr_dev(button2, "class", "svelte-1kt20zm");
-    			add_location(button2, file, 1508, 3, 31967);
-    			attr_dev(button3, "class", "svelte-1kt20zm");
-    			add_location(button3, file, 1509, 3, 32013);
-    			attr_dev(button4, "class", "svelte-1kt20zm");
-    			add_location(button4, file, 1511, 3, 32077);
-    			attr_dev(button5, "class", "svelte-1kt20zm");
-    			add_location(button5, file, 1512, 3, 32128);
-    			attr_dev(button6, "class", "svelte-1kt20zm");
-    			add_location(button6, file, 1513, 3, 32179);
-    			attr_dev(div2, "class", "inner_div svelte-1kt20zm");
-    			add_location(div2, file, 1506, 2, 31896);
-    			attr_dev(div3, "class", "inner_div svelte-1kt20zm");
-    			add_location(div3, file, 1515, 2, 32241);
-    			attr_dev(div4, "class", "nice_message svelte-1kt20zm");
-    			add_location(div4, file, 1492, 1, 31274);
+    			attr_dev(button0, "class", "svelte-1i7lf6y");
+    			add_location(button0, file, 1247, 3, 27557);
+    			attr_dev(div1, "class", "svelte-1i7lf6y");
+    			add_location(div1, file, 1236, 2, 27060);
+    			attr_dev(button1, "class", "svelte-1i7lf6y");
+    			add_location(button1, file, 1250, 3, 27700);
+    			attr_dev(button2, "class", "svelte-1i7lf6y");
+    			add_location(button2, file, 1251, 3, 27744);
+    			attr_dev(button3, "class", "svelte-1i7lf6y");
+    			add_location(button3, file, 1252, 3, 27790);
+    			attr_dev(button4, "class", "svelte-1i7lf6y");
+    			add_location(button4, file, 1254, 3, 27854);
+    			attr_dev(button5, "class", "svelte-1i7lf6y");
+    			add_location(button5, file, 1255, 3, 27905);
+    			attr_dev(button6, "class", "svelte-1i7lf6y");
+    			add_location(button6, file, 1256, 3, 27956);
+    			attr_dev(input, "id", "use-debugger-checkbox");
+    			attr_dev(input, "type", "checkbox");
+    			attr_dev(input, "class", "svelte-1i7lf6y");
+    			add_location(input, file, 1257, 57, 28064);
+    			attr_dev(div2, "class", "for-checker svelte-1i7lf6y");
+    			add_location(div2, file, 1257, 3, 28010);
+    			attr_dev(div3, "class", "inner_div svelte-1i7lf6y");
+    			set_style(div3, "width", "100%");
+    			add_location(div3, file, 1249, 2, 27652);
+    			attr_dev(div4, "class", "inner_div svelte-1i7lf6y");
+    			add_location(div4, file, 1259, 2, 28163);
+    			attr_dev(div5, "class", "nice_message svelte-1i7lf6y");
+    			add_location(div5, file, 1235, 1, 27031);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div4, anchor);
-    			append_dev(div4, div1);
+    			insert_dev(target, div5, anchor);
+    			append_dev(div5, div1);
     			append_dev(div1, span0);
     			append_dev(span0, t0);
     			append_dev(div1, t1);
@@ -22673,33 +22690,40 @@ var app = (function () {
     			if_block.m(div0, null);
     			append_dev(div1, t4);
     			append_dev(div1, button0);
-    			append_dev(div4, t6);
-    			append_dev(div4, div2);
-    			append_dev(div2, button1);
-    			append_dev(div2, t8);
-    			append_dev(div2, button2);
-    			append_dev(div2, t10);
-    			append_dev(div2, button3);
-    			append_dev(div2, t12);
-    			append_dev(div2, button4);
-    			append_dev(div2, t14);
-    			append_dev(div2, button5);
-    			append_dev(div2, t16);
-    			append_dev(div2, button6);
-    			append_dev(div4, t18);
-    			append_dev(div4, div3);
-    			mount_component(jsonview, div3, null);
+    			append_dev(div5, t6);
+    			append_dev(div5, div3);
+    			append_dev(div3, button1);
+    			append_dev(div3, t8);
+    			append_dev(div3, button2);
+    			append_dev(div3, t10);
+    			append_dev(div3, button3);
+    			append_dev(div3, t12);
+    			append_dev(div3, button4);
+    			append_dev(div3, t14);
+    			append_dev(div3, button5);
+    			append_dev(div3, t16);
+    			append_dev(div3, button6);
+    			append_dev(div3, t18);
+    			append_dev(div3, div2);
+    			append_dev(div2, t19);
+    			append_dev(div2, input);
+    			input.checked = /*use_debugger*/ ctx[14];
+    			append_dev(div2, t20);
+    			append_dev(div5, t21);
+    			append_dev(div5, div4);
+    			mount_component(jsonview, div4, null);
     			current = true;
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(button0, "click", /*toggle_password_view*/ ctx[45], false, false, false),
-    					listen_dev(button1, "click", /*run_proc*/ ctx[34], false, false, false),
-    					listen_dev(button2, "click", /*stop_proc*/ ctx[35], false, false, false),
-    					listen_dev(button3, "click", /*restart_proc*/ ctx[33], false, false, false),
-    					listen_dev(button4, "click", /*update_entry*/ ctx[40], false, false, false),
-    					listen_dev(button5, "click", /*remove_entry*/ ctx[37], false, false, false),
-    					listen_dev(button6, "click", /*edit_app_config*/ ctx[41], false, false, false)
+    					listen_dev(button0, "click", /*toggle_password_view*/ ctx[46], false, false, false),
+    					listen_dev(button1, "click", /*run_proc*/ ctx[35], false, false, false),
+    					listen_dev(button2, "click", /*stop_proc*/ ctx[36], false, false, false),
+    					listen_dev(button3, "click", /*restart_proc*/ ctx[34], false, false, false),
+    					listen_dev(button4, "click", /*update_entry*/ ctx[41], false, false, false),
+    					listen_dev(button5, "click", /*remove_entry*/ ctx[38], false, false, false),
+    					listen_dev(button6, "click", /*edit_app_config*/ ctx[42], false, false, false),
+    					listen_dev(input, "change", /*input_change_handler*/ ctx[61])
     				];
 
     				mounted = true;
@@ -22725,8 +22749,12 @@ var app = (function () {
     				}
     			}
 
+    			if (dirty[0] & /*use_debugger*/ 16384) {
+    				input.checked = /*use_debugger*/ ctx[14];
+    			}
+
     			const jsonview_changes = {};
-    			if (dirty[0] & /*active_proc_data*/ 1048576) jsonview_changes.json = /*active_proc_data*/ ctx[20];
+    			if (dirty[0] & /*active_proc_data*/ 2097152) jsonview_changes.json = /*active_proc_data*/ ctx[21];
     			jsonview.$set(jsonview_changes);
     		},
     		i: function intro(local) {
@@ -22739,7 +22767,7 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div4);
+    			if (detaching) detach_dev(div5);
     			if_block.d();
     			destroy_component(jsonview);
     			mounted = false;
@@ -22751,25 +22779,25 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(1492:32) ",
+    		source: "(1235:32) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1488:33) 
+    // (1231:33) 
     function create_if_block_2(ctx) {
     	let div;
 
     	const block = {
     		c: function create() {
     			div = element("div");
-    			attr_dev(div, "class", "nice_message svelte-1kt20zm");
+    			attr_dev(div, "class", "nice_message svelte-1i7lf6y");
     			set_style(div, "max-height", "500px");
     			set_style(div, "overflow", "auto");
     			set_style(div, "border", "solid 1px black");
-    			add_location(div, file, 1488, 1, 31116);
+    			add_location(div, file, 1231, 1, 26873);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -22788,14 +22816,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(1488:33) ",
+    		source: "(1231:33) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1450:1) {#if (active === 'Overview')}
+    // (1193:1) {#if (active === 'Overview')}
     function create_if_block(ctx) {
     	let div7;
     	let div0;
@@ -22848,7 +22876,7 @@ var app = (function () {
     		c: function create() {
     			div7 = element("div");
     			div0 = element("div");
-    			div0.textContent = `Overview of your processes running on instance :: ${/*todays_date*/ ctx[22]}`;
+    			div0.textContent = `Overview of your processes running on instance :: ${/*todays_date*/ ctx[23]}`;
     			t2 = space$1();
     			div5 = element("div");
     			div3 = element("div");
@@ -22891,52 +22919,52 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div0, "class", "front-page-explain svelte-1kt20zm");
-    			add_location(div0, file, 1451, 2, 29630);
-    			attr_dev(button0, "class", "svelte-1kt20zm");
-    			add_location(button0, file, 1456, 4, 29799);
-    			attr_dev(button1, "class", "svelte-1kt20zm");
-    			add_location(button1, file, 1457, 4, 29849);
-    			attr_dev(button2, "class", "svelte-1kt20zm");
-    			add_location(button2, file, 1458, 4, 29895);
-    			attr_dev(button3, "class", "svelte-1kt20zm");
-    			add_location(button3, file, 1460, 4, 29960);
+    			attr_dev(div0, "class", "front-page-explain svelte-1i7lf6y");
+    			add_location(div0, file, 1194, 2, 25387);
+    			attr_dev(button0, "class", "svelte-1i7lf6y");
+    			add_location(button0, file, 1199, 4, 25556);
+    			attr_dev(button1, "class", "svelte-1i7lf6y");
+    			add_location(button1, file, 1200, 4, 25606);
+    			attr_dev(button2, "class", "svelte-1i7lf6y");
+    			add_location(button2, file, 1201, 4, 25652);
+    			attr_dev(button3, "class", "svelte-1i7lf6y");
+    			add_location(button3, file, 1203, 4, 25717);
     			set_style(div1, "display", "inline-block");
     			set_style(div1, "text-align", "left");
-    			attr_dev(div1, "class", "svelte-1kt20zm");
-    			add_location(div1, file, 1461, 4, 30009);
+    			attr_dev(div1, "class", "svelte-1i7lf6y");
+    			add_location(div1, file, 1204, 4, 25766);
     			set_style(button4, "font-size", "larger");
-    			attr_dev(button4, "class", "svelte-1kt20zm");
-    			add_location(button4, file, 1468, 4, 30360);
-    			attr_dev(button5, "class", "svelte-1kt20zm");
-    			add_location(button5, file, 1470, 5, 30516);
+    			attr_dev(button4, "class", "svelte-1i7lf6y");
+    			add_location(button4, file, 1211, 4, 26117);
+    			attr_dev(button5, "class", "svelte-1i7lf6y");
+    			add_location(button5, file, 1213, 5, 26273);
     			set_style(div2, "display", "inline-block");
     			set_style(div2, "text-align", "right");
     			set_style(div2, "width", "30%");
-    			attr_dev(div2, "class", "svelte-1kt20zm");
-    			add_location(div2, file, 1469, 4, 30449);
-    			attr_dev(div3, "class", "inner_div svelte-1kt20zm");
-    			add_location(div3, file, 1455, 3, 29771);
-    			attr_dev(b, "class", "svelte-1kt20zm");
-    			add_location(b, file, 1474, 4, 30613);
-    			attr_dev(button6, "class", "svelte-1kt20zm");
-    			add_location(button6, file, 1475, 4, 30649);
-    			attr_dev(button7, "class", "svelte-1kt20zm");
-    			add_location(button7, file, 1476, 4, 30701);
-    			attr_dev(div4, "class", "inner_div svelte-1kt20zm");
-    			add_location(div4, file, 1473, 3, 30585);
-    			attr_dev(div5, "class", "nice_message svelte-1kt20zm");
-    			add_location(div5, file, 1454, 2, 29741);
+    			attr_dev(div2, "class", "svelte-1i7lf6y");
+    			add_location(div2, file, 1212, 4, 26206);
+    			attr_dev(div3, "class", "inner_div svelte-1i7lf6y");
+    			add_location(div3, file, 1198, 3, 25528);
+    			attr_dev(b, "class", "svelte-1i7lf6y");
+    			add_location(b, file, 1217, 4, 26370);
+    			attr_dev(button6, "class", "svelte-1i7lf6y");
+    			add_location(button6, file, 1218, 4, 26406);
+    			attr_dev(button7, "class", "svelte-1i7lf6y");
+    			add_location(button7, file, 1219, 4, 26458);
+    			attr_dev(div4, "class", "inner_div svelte-1i7lf6y");
+    			add_location(div4, file, 1216, 3, 26342);
+    			attr_dev(div5, "class", "nice_message svelte-1i7lf6y");
+    			add_location(div5, file, 1197, 2, 25498);
     			attr_dev(select, "size", 10);
     			set_style(select, "text-align", "center");
-    			attr_dev(select, "class", "svelte-1kt20zm");
-    			if (/*u_index*/ ctx[2] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[57].call(select));
-    			add_location(select, file, 1480, 3, 30780);
-    			attr_dev(div6, "class", "svelte-1kt20zm");
-    			add_location(div6, file, 1479, 2, 30771);
-    			attr_dev(div7, "class", "splash-if-you-will svelte-1kt20zm");
+    			attr_dev(select, "class", "svelte-1i7lf6y");
+    			if (/*u_index*/ ctx[2] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[58].call(select));
+    			add_location(select, file, 1223, 3, 26537);
+    			attr_dev(div6, "class", "svelte-1i7lf6y");
+    			add_location(div6, file, 1222, 2, 26528);
+    			attr_dev(div7, "class", "splash-if-you-will svelte-1i7lf6y");
     			set_style(div7, "height", "fit-content");
-    			add_location(div7, file, 1450, 1, 29567);
+    			add_location(div7, file, 1193, 1, 25324);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div7, anchor);
@@ -22978,15 +23006,15 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(button0, "click", /*reload_all*/ ctx[38], false, false, false),
-    					listen_dev(button1, "click", /*add_entry*/ ctx[39], false, false, false),
-    					listen_dev(button2, "click", /*remove_entry*/ ctx[37], false, false, false),
-    					listen_dev(button3, "click", /*run_command*/ ctx[42], false, false, false),
-    					listen_dev(button4, "click", /*toggle_password_view*/ ctx[45], false, false, false),
-    					listen_dev(button5, "click", /*stopall*/ ctx[36], false, false, false),
-    					listen_dev(button6, "click", /*npm_install*/ ctx[43], false, false, false),
-    					listen_dev(button7, "click", /*npm_remove*/ ctx[44], false, false, false),
-    					listen_dev(select, "change", /*select_change_handler*/ ctx[57]),
+    					listen_dev(button0, "click", /*reload_all*/ ctx[39], false, false, false),
+    					listen_dev(button1, "click", /*add_entry*/ ctx[40], false, false, false),
+    					listen_dev(button2, "click", /*remove_entry*/ ctx[38], false, false, false),
+    					listen_dev(button3, "click", /*run_command*/ ctx[43], false, false, false),
+    					listen_dev(button4, "click", /*toggle_password_view*/ ctx[46], false, false, false),
+    					listen_dev(button5, "click", /*stopall*/ ctx[37], false, false, false),
+    					listen_dev(button6, "click", /*npm_install*/ ctx[44], false, false, false),
+    					listen_dev(button7, "click", /*npm_remove*/ ctx[45], false, false, false),
+    					listen_dev(select, "change", /*select_change_handler*/ ctx[58]),
     					listen_dev(select, "click", navigate_to_proc, false, false, false)
     				];
 
@@ -23049,14 +23077,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(1450:1) {#if (active === 'Overview')}",
+    		source: "(1193:1) {#if (active === 'Overview')}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1501:4) {:else}
+    // (1244:4) {:else}
     function create_else_block_1(ctx) {
     	let label;
     	let input;
@@ -23069,12 +23097,12 @@ var app = (function () {
     			label.textContent = "Admin Password";
     			input = element("input");
     			attr_dev(label, "for", "admin-pass");
-    			attr_dev(label, "class", "svelte-1kt20zm");
-    			add_location(label, file, 1501, 4, 31667);
+    			attr_dev(label, "class", "svelte-1i7lf6y");
+    			add_location(label, file, 1244, 4, 27424);
     			attr_dev(input, "type", "text");
     			attr_dev(input, "id", "admin-pass-2");
-    			attr_dev(input, "class", "svelte-1kt20zm");
-    			add_location(input, file, 1501, 50, 31713);
+    			attr_dev(input, "class", "svelte-1i7lf6y");
+    			add_location(input, file, 1244, 50, 27470);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, label, anchor);
@@ -23082,7 +23110,7 @@ var app = (function () {
     			set_input_value(input, /*admin_pass*/ ctx[13]);
 
     			if (!mounted) {
-    				dispose = listen_dev(input, "input", /*input_input_handler_3*/ ctx[59]);
+    				dispose = listen_dev(input, "input", /*input_input_handler_3*/ ctx[60]);
     				mounted = true;
     			}
     		},
@@ -23103,14 +23131,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(1501:4) {:else}",
+    		source: "(1244:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1499:4) {#if password_view_type }
+    // (1242:4) {#if password_view_type }
     function create_if_block_4(ctx) {
     	let label;
     	let input;
@@ -23123,12 +23151,12 @@ var app = (function () {
     			label.textContent = "Admin Password";
     			input = element("input");
     			attr_dev(label, "for", "admin-pass");
-    			attr_dev(label, "class", "svelte-1kt20zm");
-    			add_location(label, file, 1499, 4, 31537);
+    			attr_dev(label, "class", "svelte-1i7lf6y");
+    			add_location(label, file, 1242, 4, 27294);
     			attr_dev(input, "type", "password");
     			attr_dev(input, "id", "admin-pass-2");
-    			attr_dev(input, "class", "svelte-1kt20zm");
-    			add_location(input, file, 1499, 50, 31583);
+    			attr_dev(input, "class", "svelte-1i7lf6y");
+    			add_location(input, file, 1242, 50, 27340);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, label, anchor);
@@ -23136,7 +23164,7 @@ var app = (function () {
     			set_input_value(input, /*admin_pass*/ ctx[13]);
 
     			if (!mounted) {
-    				dispose = listen_dev(input, "input", /*input_input_handler_2*/ ctx[58]);
+    				dispose = listen_dev(input, "input", /*input_input_handler_2*/ ctx[59]);
     				mounted = true;
     			}
     		},
@@ -23157,14 +23185,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(1499:4) {#if password_view_type }",
+    		source: "(1242:4) {#if password_view_type }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1465:5) {:else}
+    // (1208:5) {:else}
     function create_else_block(ctx) {
     	let label;
     	let input;
@@ -23177,12 +23205,12 @@ var app = (function () {
     			label.textContent = "Admin Password";
     			input = element("input");
     			attr_dev(label, "for", "admin-pass");
-    			attr_dev(label, "class", "svelte-1kt20zm");
-    			add_location(label, file, 1465, 5, 30226);
+    			attr_dev(label, "class", "svelte-1i7lf6y");
+    			add_location(label, file, 1208, 5, 25983);
     			attr_dev(input, "type", "text");
     			attr_dev(input, "id", "admin-pass");
-    			attr_dev(input, "class", "svelte-1kt20zm");
-    			add_location(input, file, 1465, 51, 30272);
+    			attr_dev(input, "class", "svelte-1i7lf6y");
+    			add_location(input, file, 1208, 51, 26029);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, label, anchor);
@@ -23190,7 +23218,7 @@ var app = (function () {
     			set_input_value(input, /*admin_pass*/ ctx[13]);
 
     			if (!mounted) {
-    				dispose = listen_dev(input, "input", /*input_input_handler_1*/ ctx[56]);
+    				dispose = listen_dev(input, "input", /*input_input_handler_1*/ ctx[57]);
     				mounted = true;
     			}
     		},
@@ -23211,14 +23239,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(1465:5) {:else}",
+    		source: "(1208:5) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1463:5) {#if password_view_type }
+    // (1206:5) {#if password_view_type }
     function create_if_block_1(ctx) {
     	let label;
     	let input;
@@ -23231,12 +23259,12 @@ var app = (function () {
     			label.textContent = "Admin Password";
     			input = element("input");
     			attr_dev(label, "for", "admin-pass");
-    			attr_dev(label, "class", "svelte-1kt20zm");
-    			add_location(label, file, 1463, 5, 30096);
+    			attr_dev(label, "class", "svelte-1i7lf6y");
+    			add_location(label, file, 1206, 5, 25853);
     			attr_dev(input, "type", "password");
     			attr_dev(input, "id", "admin-pass");
-    			attr_dev(input, "class", "svelte-1kt20zm");
-    			add_location(input, file, 1463, 51, 30142);
+    			attr_dev(input, "class", "svelte-1i7lf6y");
+    			add_location(input, file, 1206, 51, 25899);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, label, anchor);
@@ -23244,7 +23272,7 @@ var app = (function () {
     			set_input_value(input, /*admin_pass*/ ctx[13]);
 
     			if (!mounted) {
-    				dispose = listen_dev(input, "input", /*input_input_handler*/ ctx[55]);
+    				dispose = listen_dev(input, "input", /*input_input_handler*/ ctx[56]);
     				mounted = true;
     			}
     		},
@@ -23265,17 +23293,17 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(1463:5) {#if password_view_type }",
+    		source: "(1206:5) {#if password_view_type }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1482:4) {#each known_procs as maybe_proc, u_index }
+    // (1225:4) {#each known_procs as maybe_proc, u_index }
     function create_each_block(ctx) {
     	let option;
-    	let t_value = /*maybe_proc*/ ctx[98].proc_name + "";
+    	let t_value = /*maybe_proc*/ ctx[100].proc_name + "";
     	let t;
 
     	const block = {
@@ -23284,19 +23312,19 @@ var app = (function () {
     			t = text$1(t_value);
     			option.__value = /*u_index*/ ctx[2];
     			option.value = option.__value;
-    			set_style(option, "color", /*maybe_proc*/ ctx[98].running ? 'green' : 'red');
-    			attr_dev(option, "class", "svelte-1kt20zm");
-    			add_location(option, file, 1482, 5, 30929);
+    			set_style(option, "color", /*maybe_proc*/ ctx[100].running ? 'green' : 'red');
+    			attr_dev(option, "class", "svelte-1i7lf6y");
+    			add_location(option, file, 1225, 5, 26686);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
     			append_dev(option, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*known_procs*/ 1 && t_value !== (t_value = /*maybe_proc*/ ctx[98].proc_name + "")) set_data_dev(t, t_value);
+    			if (dirty[0] & /*known_procs*/ 1 && t_value !== (t_value = /*maybe_proc*/ ctx[100].proc_name + "")) set_data_dev(t, t_value);
 
     			if (dirty[0] & /*known_procs*/ 1) {
-    				set_style(option, "color", /*maybe_proc*/ ctx[98].running ? 'green' : 'red');
+    				set_style(option, "color", /*maybe_proc*/ ctx[100].running ? 'green' : 'red');
     			}
     		},
     		d: function destroy(detaching) {
@@ -23308,7 +23336,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(1482:4) {#each known_procs as maybe_proc, u_index }",
+    		source: "(1225:4) {#each known_procs as maybe_proc, u_index }",
     		ctx
     	});
 
@@ -23350,7 +23378,7 @@ var app = (function () {
     	let current;
 
     	function tabbar_active_binding(value) {
-    		/*tabbar_active_binding*/ ctx[54](value);
+    		/*tabbar_active_binding*/ ctx[55](value);
     	}
 
     	let tabbar_props = {
@@ -23358,8 +23386,8 @@ var app = (function () {
     		$$slots: {
     			default: [
     				create_default_slot,
-    				({ tab }) => ({ 100: tab }),
-    				({ tab }) => [0, 0, 0, tab ? 128 : 0]
+    				({ tab }) => ({ 102: tab }),
+    				({ tab }) => [0, 0, 0, tab ? 512 : 0]
     			]
     		},
     		$$scope: { ctx }
@@ -23398,12 +23426,12 @@ var app = (function () {
     	const makeentrydialog0_spread_levels = [
     		/*dialog_data*/ ctx[3],
     		{ message: "Create a process entry" },
-    		{ onCancel: /*onCancel*/ ctx[23] },
-    		{ onOkay: /*onOkay*/ ctx[24] }
+    		{ onCancel: /*onCancel*/ ctx[24] },
+    		{ onOkay: /*onOkay*/ ctx[25] }
     	];
 
     	function makeentrydialog0_admin_pass_binding(value) {
-    		/*makeentrydialog0_admin_pass_binding*/ ctx[61](value);
+    		/*makeentrydialog0_admin_pass_binding*/ ctx[63](value);
     	}
 
     	let makeentrydialog0_props = {};
@@ -23424,17 +23452,17 @@ var app = (function () {
     	binding_callbacks.push(() => bind(makeentrydialog0, 'admin_pass', makeentrydialog0_admin_pass_binding));
 
     	function editconfdialog_conf_dialog_data_binding(value) {
-    		/*editconfdialog_conf_dialog_data_binding*/ ctx[62](value);
+    		/*editconfdialog_conf_dialog_data_binding*/ ctx[64](value);
     	}
 
     	function editconfdialog_admin_pass_binding(value) {
-    		/*editconfdialog_admin_pass_binding*/ ctx[63](value);
+    		/*editconfdialog_admin_pass_binding*/ ctx[65](value);
     	}
 
     	let editconfdialog_props = {
     		message: "Edit process config file",
-    		onCancel: /*onConfCancel*/ ctx[27],
-    		onOkay: /*onConfOkay*/ ctx[28]
+    		onCancel: /*onConfCancel*/ ctx[28],
+    		onOkay: /*onConfOkay*/ ctx[29]
     	};
 
     	if (/*conf_dialog_data*/ ctx[4] !== void 0) {
@@ -23454,18 +23482,18 @@ var app = (function () {
     	binding_callbacks.push(() => bind(editconfdialog, 'admin_pass', editconfdialog_admin_pass_binding));
 
     	function execdialog_exec_dialog_data_binding(value) {
-    		/*execdialog_exec_dialog_data_binding*/ ctx[64](value);
+    		/*execdialog_exec_dialog_data_binding*/ ctx[66](value);
     	}
 
     	function execdialog_admin_pass_binding(value) {
-    		/*execdialog_admin_pass_binding*/ ctx[65](value);
+    		/*execdialog_admin_pass_binding*/ ctx[67](value);
     	}
 
     	let execdialog_props = {
     		message: "Run a single command",
     		hasForm: "true",
-    		onCancel: /*onExecCancel*/ ctx[29],
-    		onOkay: /*onExecOkay*/ ctx[30]
+    		onCancel: /*onExecCancel*/ ctx[30],
+    		onOkay: /*onExecOkay*/ ctx[31]
     	};
 
     	if (/*exec_dialog_data*/ ctx[5] !== void 0) {
@@ -23481,19 +23509,19 @@ var app = (function () {
     	binding_callbacks.push(() => bind(execdialog, 'admin_pass', execdialog_admin_pass_binding));
 
     	function npmdialog_npm_dialog_data_binding(value) {
-    		/*npmdialog_npm_dialog_data_binding*/ ctx[66](value);
+    		/*npmdialog_npm_dialog_data_binding*/ ctx[68](value);
     	}
 
     	function npmdialog_admin_pass_binding(value) {
-    		/*npmdialog_admin_pass_binding*/ ctx[67](value);
+    		/*npmdialog_admin_pass_binding*/ ctx[69](value);
     	}
 
     	let npmdialog_props = {
     		message: "Mnage Npm modules",
-    		npm_action: /*npm_action*/ ctx[19],
+    		npm_action: /*npm_action*/ ctx[20],
     		hasForm: "true",
-    		onCancel: /*onNpmCancel*/ ctx[31],
-    		onOkay: /*onNpmOkay*/ ctx[32]
+    		onCancel: /*onNpmCancel*/ ctx[32],
+    		onOkay: /*onNpmOkay*/ ctx[33]
     	};
 
     	if (/*npm_dialog_data*/ ctx[6] !== void 0) {
@@ -23511,12 +23539,12 @@ var app = (function () {
     	const makeentrydialog1_spread_levels = [
     		/*dialog_update_data*/ ctx[7],
     		{ message: "Update this process entry" },
-    		{ onCancel: /*onUpdateCancel*/ ctx[25] },
-    		{ onOkay: /*onUpdateOkay*/ ctx[26] }
+    		{ onCancel: /*onUpdateCancel*/ ctx[26] },
+    		{ onOkay: /*onUpdateOkay*/ ctx[27] }
     	];
 
     	function makeentrydialog1_admin_pass_binding(value) {
-    		/*makeentrydialog1_admin_pass_binding*/ ctx[68](value);
+    		/*makeentrydialog1_admin_pass_binding*/ ctx[70](value);
     	}
 
     	let makeentrydialog1_props = {};
@@ -23559,25 +23587,25 @@ var app = (function () {
     			t6 = space$1();
     			div5 = element("div");
     			create_component(makeentrydialog1.$$.fragment);
-    			attr_dev(br, "class", "svelte-1kt20zm");
-    			add_location(br, file, 1447, 1, 29529);
-    			attr_dev(div0, "class", "svelte-1kt20zm");
-    			add_location(div0, file, 1437, 0, 29153);
-    			attr_dev(div1, "class", "dialoger nice_message svelte-1kt20zm");
-    			set_style(div1, "display", /*show_dialog*/ ctx[14]);
-    			add_location(div1, file, 1540, 0, 32801);
-    			attr_dev(div2, "class", "dialoger nice_message svelte-1kt20zm");
-    			set_style(div2, "display", /*show_conf_dialog*/ ctx[16]);
-    			add_location(div2, file, 1544, 0, 33011);
-    			attr_dev(div3, "class", "dialoger nice_message svelte-1kt20zm");
-    			set_style(div3, "display", /*show_exec_dialog*/ ctx[17]);
-    			add_location(div3, file, 1549, 0, 33261);
-    			attr_dev(div4, "class", "dialoger nice_message svelte-1kt20zm");
-    			set_style(div4, "display", /*show_npm_dialog*/ ctx[18]);
-    			add_location(div4, file, 1554, 0, 33516);
-    			attr_dev(div5, "class", "dialoger nice_message svelte-1kt20zm");
-    			set_style(div5, "display", /*show_update_dialog*/ ctx[15]);
-    			add_location(div5, file, 1559, 0, 33786);
+    			attr_dev(br, "class", "svelte-1i7lf6y");
+    			add_location(br, file, 1190, 1, 25286);
+    			attr_dev(div0, "class", "svelte-1i7lf6y");
+    			add_location(div0, file, 1180, 0, 24910);
+    			attr_dev(div1, "class", "dialoger nice_message svelte-1i7lf6y");
+    			set_style(div1, "display", /*show_dialog*/ ctx[15]);
+    			add_location(div1, file, 1284, 0, 28723);
+    			attr_dev(div2, "class", "dialoger nice_message svelte-1i7lf6y");
+    			set_style(div2, "display", /*show_conf_dialog*/ ctx[17]);
+    			add_location(div2, file, 1288, 0, 28933);
+    			attr_dev(div3, "class", "dialoger nice_message svelte-1i7lf6y");
+    			set_style(div3, "display", /*show_exec_dialog*/ ctx[18]);
+    			add_location(div3, file, 1293, 0, 29183);
+    			attr_dev(div4, "class", "dialoger nice_message svelte-1i7lf6y");
+    			set_style(div4, "display", /*show_npm_dialog*/ ctx[19]);
+    			add_location(div4, file, 1298, 0, 29438);
+    			attr_dev(div5, "class", "dialoger nice_message svelte-1i7lf6y");
+    			set_style(div5, "display", /*show_update_dialog*/ ctx[16]);
+    			add_location(div5, file, 1303, 0, 29708);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -23613,7 +23641,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const tabbar_changes = {};
 
-    			if (dirty[0] & /*active*/ 2 | dirty[3] & /*$$scope, tab*/ 384) {
+    			if (dirty[0] & /*active*/ 2 | dirty[3] & /*$$scope, tab*/ 1536) {
     				tabbar_changes.$$scope = { dirty, ctx };
     			}
 
@@ -23659,12 +23687,12 @@ var app = (function () {
     				}
     			}
 
-    			const makeentrydialog0_changes = (dirty[0] & /*dialog_data, onCancel, onOkay*/ 25165832)
+    			const makeentrydialog0_changes = (dirty[0] & /*dialog_data, onCancel, onOkay*/ 50331656)
     			? get_spread_update(makeentrydialog0_spread_levels, [
     					dirty[0] & /*dialog_data*/ 8 && get_spread_object(/*dialog_data*/ ctx[3]),
     					makeentrydialog0_spread_levels[1],
-    					dirty[0] & /*onCancel*/ 8388608 && { onCancel: /*onCancel*/ ctx[23] },
-    					dirty[0] & /*onOkay*/ 16777216 && { onOkay: /*onOkay*/ ctx[24] }
+    					dirty[0] & /*onCancel*/ 16777216 && { onCancel: /*onCancel*/ ctx[24] },
+    					dirty[0] & /*onOkay*/ 33554432 && { onOkay: /*onOkay*/ ctx[25] }
     				])
     			: {};
 
@@ -23676,8 +23704,8 @@ var app = (function () {
 
     			makeentrydialog0.$set(makeentrydialog0_changes);
 
-    			if (!current || dirty[0] & /*show_dialog*/ 16384) {
-    				set_style(div1, "display", /*show_dialog*/ ctx[14]);
+    			if (!current || dirty[0] & /*show_dialog*/ 32768) {
+    				set_style(div1, "display", /*show_dialog*/ ctx[15]);
     			}
 
     			const editconfdialog_changes = {};
@@ -23696,8 +23724,8 @@ var app = (function () {
 
     			editconfdialog.$set(editconfdialog_changes);
 
-    			if (!current || dirty[0] & /*show_conf_dialog*/ 65536) {
-    				set_style(div2, "display", /*show_conf_dialog*/ ctx[16]);
+    			if (!current || dirty[0] & /*show_conf_dialog*/ 131072) {
+    				set_style(div2, "display", /*show_conf_dialog*/ ctx[17]);
     			}
 
     			const execdialog_changes = {};
@@ -23716,12 +23744,12 @@ var app = (function () {
 
     			execdialog.$set(execdialog_changes);
 
-    			if (!current || dirty[0] & /*show_exec_dialog*/ 131072) {
-    				set_style(div3, "display", /*show_exec_dialog*/ ctx[17]);
+    			if (!current || dirty[0] & /*show_exec_dialog*/ 262144) {
+    				set_style(div3, "display", /*show_exec_dialog*/ ctx[18]);
     			}
 
     			const npmdialog_changes = {};
-    			if (dirty[0] & /*npm_action*/ 524288) npmdialog_changes.npm_action = /*npm_action*/ ctx[19];
+    			if (dirty[0] & /*npm_action*/ 1048576) npmdialog_changes.npm_action = /*npm_action*/ ctx[20];
 
     			if (!updating_npm_dialog_data && dirty[0] & /*npm_dialog_data*/ 64) {
     				updating_npm_dialog_data = true;
@@ -23737,16 +23765,16 @@ var app = (function () {
 
     			npmdialog.$set(npmdialog_changes);
 
-    			if (!current || dirty[0] & /*show_npm_dialog*/ 262144) {
-    				set_style(div4, "display", /*show_npm_dialog*/ ctx[18]);
+    			if (!current || dirty[0] & /*show_npm_dialog*/ 524288) {
+    				set_style(div4, "display", /*show_npm_dialog*/ ctx[19]);
     			}
 
-    			const makeentrydialog1_changes = (dirty[0] & /*dialog_update_data, onUpdateCancel, onUpdateOkay*/ 100663424)
+    			const makeentrydialog1_changes = (dirty[0] & /*dialog_update_data, onUpdateCancel, onUpdateOkay*/ 201326720)
     			? get_spread_update(makeentrydialog1_spread_levels, [
     					dirty[0] & /*dialog_update_data*/ 128 && get_spread_object(/*dialog_update_data*/ ctx[7]),
     					makeentrydialog1_spread_levels[1],
-    					dirty[0] & /*onUpdateCancel*/ 33554432 && { onCancel: /*onUpdateCancel*/ ctx[25] },
-    					dirty[0] & /*onUpdateOkay*/ 67108864 && { onOkay: /*onUpdateOkay*/ ctx[26] }
+    					dirty[0] & /*onUpdateCancel*/ 67108864 && { onCancel: /*onUpdateCancel*/ ctx[26] },
+    					dirty[0] & /*onUpdateOkay*/ 134217728 && { onOkay: /*onUpdateOkay*/ ctx[27] }
     				])
     			: {};
 
@@ -23758,8 +23786,8 @@ var app = (function () {
 
     			makeentrydialog1.$set(makeentrydialog1_changes);
 
-    			if (!current || dirty[0] & /*show_update_dialog*/ 32768) {
-    				set_style(div5, "display", /*show_update_dialog*/ ctx[15]);
+    			if (!current || dirty[0] & /*show_update_dialog*/ 65536) {
+    				set_style(div5, "display", /*show_update_dialog*/ ctx[16]);
     			}
     		},
     		i: function intro(local) {
@@ -23935,6 +23963,7 @@ var app = (function () {
     	let running_color = "green";
     	let running_state = "running";
     	let admin_pass = "";
+    	let use_debugger = false;
     	let manifest_selected_entry = false;
     	let manifest_selected_form = false;
     	let manifest_contact_form_list = [false];
@@ -24072,7 +24101,7 @@ var app = (function () {
     	let add_promise = false;
 
     	const onCancel = () => {
-    		$$invalidate(14, show_dialog = "none");
+    		$$invalidate(15, show_dialog = "none");
 
     		if (add_promise && typeof add_promise.rejector === 'function') {
     			add_promise.rejector();
@@ -24082,7 +24111,7 @@ var app = (function () {
     	const onOkay = ddata => {
     		$$invalidate(3, dialog_data = ddata);
     		console.log(ddata);
-    		$$invalidate(14, show_dialog = "none");
+    		$$invalidate(15, show_dialog = "none");
 
     		if (add_promise && typeof add_promise.resolver === 'function') {
     			add_promise.resolver();
@@ -24092,7 +24121,7 @@ var app = (function () {
     	//
     	// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
     	async function proc_def_from_user() {
-    		$$invalidate(14, show_dialog = "block");
+    		$$invalidate(15, show_dialog = "block");
 
     		let p = new Promise((resolve, reject) => {
     				add_promise = {
@@ -24121,7 +24150,7 @@ var app = (function () {
     	let add_update_promise = false;
 
     	const onUpdateCancel = () => {
-    		$$invalidate(15, show_update_dialog = "none");
+    		$$invalidate(16, show_update_dialog = "none");
 
     		if (add_update_promise && typeof add_update_promise.rejector === 'function') {
     			add_update_promise.rejector();
@@ -24131,7 +24160,7 @@ var app = (function () {
     	const onUpdateOkay = ddata => {
     		$$invalidate(7, dialog_update_data = ddata);
     		console.log(ddata);
-    		$$invalidate(15, show_update_dialog = "none");
+    		$$invalidate(16, show_update_dialog = "none");
 
     		if (add_update_promise && typeof add_update_promise.resolver === 'function') {
     			add_update_promise.resolver();
@@ -24141,7 +24170,7 @@ var app = (function () {
     	//
     	// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
     	async function update_def_from_user() {
-    		$$invalidate(15, show_update_dialog = "block");
+    		$$invalidate(16, show_update_dialog = "block");
 
     		let p = new Promise((resolve, reject) => {
     				add_update_promise = {
@@ -24170,7 +24199,7 @@ var app = (function () {
     	let add_conf_promise = false;
 
     	const onConfCancel = () => {
-    		$$invalidate(16, show_conf_dialog = "none");
+    		$$invalidate(17, show_conf_dialog = "none");
 
     		if (add_conf_promise && typeof add_conf_promise.rejector === 'function') {
     			add_conf_promise.rejector();
@@ -24179,7 +24208,7 @@ var app = (function () {
 
     	const onConfOkay = text => {
     		console.log(text);
-    		$$invalidate(16, show_conf_dialog = "none");
+    		$$invalidate(17, show_conf_dialog = "none");
 
     		if (add_conf_promise && typeof add_conf_promise.resolver === 'function') {
     			add_conf_promise.resolver();
@@ -24187,7 +24216,7 @@ var app = (function () {
     	};
 
     	async function conf_def_from_user() {
-    		$$invalidate(16, show_conf_dialog = "block");
+    		$$invalidate(17, show_conf_dialog = "block");
 
     		let p = new Promise((resolve, reject) => {
     				add_conf_promise = {
@@ -24216,7 +24245,7 @@ var app = (function () {
     	let add_exec_promise = false;
 
     	const onExecCancel = () => {
-    		$$invalidate(17, show_exec_dialog = "none");
+    		$$invalidate(18, show_exec_dialog = "none");
 
     		if (add_exec_promise && typeof add_exec_promise.rejector === 'function') {
     			add_exec_promise.rejector();
@@ -24224,7 +24253,7 @@ var app = (function () {
     	};
 
     	const onExecOkay = () => {
-    		$$invalidate(17, show_exec_dialog = "none");
+    		$$invalidate(18, show_exec_dialog = "none");
 
     		if (add_exec_promise && typeof add_exec_promise.resolver === 'function') {
     			add_exec_promise.resolver();
@@ -24234,7 +24263,7 @@ var app = (function () {
     	//
     	// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
     	async function exec_def_from_user() {
-    		$$invalidate(17, show_exec_dialog = "block");
+    		$$invalidate(18, show_exec_dialog = "block");
 
     		let p = new Promise((resolve, reject) => {
     				add_exec_promise = {
@@ -24260,7 +24289,7 @@ var app = (function () {
     	let add_npm_promise = false;
 
     	const onNpmCancel = () => {
-    		$$invalidate(18, show_npm_dialog = "none");
+    		$$invalidate(19, show_npm_dialog = "none");
 
     		if (add_npm_promise && typeof add_npm_promise.rejector === 'function') {
     			add_npm_promise.rejector();
@@ -24268,7 +24297,7 @@ var app = (function () {
     	};
 
     	const onNpmOkay = () => {
-    		$$invalidate(18, show_npm_dialog = "none");
+    		$$invalidate(19, show_npm_dialog = "none");
 
     		if (add_npm_promise && typeof add_npm_promise.resolver === 'function') {
     			add_npm_promise.resolver();
@@ -24280,8 +24309,8 @@ var app = (function () {
     	let npm_action = "install";
 
     	async function npm_def_from_user(action_choice) {
-    		$$invalidate(19, npm_action = action_choice ? "install" : "remove");
-    		$$invalidate(18, show_npm_dialog = "block");
+    		$$invalidate(20, npm_action = action_choice ? "install" : "remove");
+    		$$invalidate(19, show_npm_dialog = "block");
 
     		let p = new Promise((resolve, reject) => {
     				add_npm_promise = {
@@ -24409,7 +24438,11 @@ var app = (function () {
     			admin_pass,
     			"op": {
     				"name": "run-proc",
-    				"param": { "proc_name": pname, "if_running": false }
+    				"param": {
+    					"proc_name": pname,
+    					"if_running": false,
+    					use_debugger
+    				}
     			}
     		};
 
@@ -24766,9 +24799,14 @@ var app = (function () {
     		$$invalidate(13, admin_pass);
     	}
 
+    	function input_change_handler() {
+    		use_debugger = this.checked;
+    		$$invalidate(14, use_debugger);
+    	}
+
     	function textarea_input_handler() {
     		md = this.value;
-    		$$invalidate(21, md);
+    		$$invalidate(22, md);
     	}
 
     	function makeentrydialog0_admin_pass_binding(value) {
@@ -24842,6 +24880,7 @@ var app = (function () {
     		running_color,
     		running_state,
     		admin_pass,
+    		use_debugger,
     		manifest_selected_entry,
     		manifest_selected_form,
     		manifest_contact_form_list,
@@ -24921,12 +24960,12 @@ var app = (function () {
     		if ('dialog_update_data' in $$props) $$invalidate(7, dialog_update_data = $$props.dialog_update_data);
     		if ('password_view_type' in $$props) $$invalidate(8, password_view_type = $$props.password_view_type);
     		if ('console_output' in $$props) $$invalidate(9, console_output = $$props.console_output);
-    		if ('active_cwid' in $$props) $$invalidate(79, active_cwid = $$props.active_cwid);
-    		if ('prefix' in $$props) $$invalidate(80, prefix = $$props.prefix);
-    		if ('man_prefix' in $$props) $$invalidate(81, man_prefix = $$props.man_prefix);
-    		if ('i' in $$props) $$invalidate(82, i = $$props.i);
+    		if ('active_cwid' in $$props) $$invalidate(81, active_cwid = $$props.active_cwid);
+    		if ('prefix' in $$props) $$invalidate(82, prefix = $$props.prefix);
+    		if ('man_prefix' in $$props) $$invalidate(83, man_prefix = $$props.man_prefix);
+    		if ('i' in $$props) $$invalidate(84, i = $$props.i);
     		if ('u_index' in $$props) $$invalidate(2, u_index = $$props.u_index);
-    		if ('active_procs' in $$props) $$invalidate(46, active_procs = $$props.active_procs);
+    		if ('active_procs' in $$props) $$invalidate(47, active_procs = $$props.active_procs);
     		if ('active_identity' in $$props) active_identity = $$props.active_identity;
     		if ('known_procs' in $$props) $$invalidate(0, known_procs = $$props.known_procs);
     		if ('all_proc_data' in $$props) all_proc_data = $$props.all_proc_data;
@@ -24934,38 +24973,39 @@ var app = (function () {
     		if ('running_color' in $$props) $$invalidate(11, running_color = $$props.running_color);
     		if ('running_state' in $$props) $$invalidate(12, running_state = $$props.running_state);
     		if ('admin_pass' in $$props) $$invalidate(13, admin_pass = $$props.admin_pass);
-    		if ('manifest_selected_entry' in $$props) $$invalidate(47, manifest_selected_entry = $$props.manifest_selected_entry);
+    		if ('use_debugger' in $$props) $$invalidate(14, use_debugger = $$props.use_debugger);
+    		if ('manifest_selected_entry' in $$props) $$invalidate(48, manifest_selected_entry = $$props.manifest_selected_entry);
     		if ('manifest_selected_form' in $$props) manifest_selected_form = $$props.manifest_selected_form;
-    		if ('manifest_contact_form_list' in $$props) $$invalidate(84, manifest_contact_form_list = $$props.manifest_contact_form_list);
-    		if ('manifest_obj' in $$props) $$invalidate(85, manifest_obj = $$props.manifest_obj);
-    		if ('manifest_index' in $$props) $$invalidate(86, manifest_index = $$props.manifest_index);
-    		if ('man_cwid' in $$props) $$invalidate(48, man_cwid = $$props.man_cwid);
+    		if ('manifest_contact_form_list' in $$props) $$invalidate(86, manifest_contact_form_list = $$props.manifest_contact_form_list);
+    		if ('manifest_obj' in $$props) $$invalidate(87, manifest_obj = $$props.manifest_obj);
+    		if ('manifest_index' in $$props) $$invalidate(88, manifest_index = $$props.manifest_index);
+    		if ('man_cwid' in $$props) $$invalidate(49, man_cwid = $$props.man_cwid);
     		if ('active' in $$props) $$invalidate(1, active = $$props.active);
-    		if ('prev_active' in $$props) $$invalidate(49, prev_active = $$props.prev_active);
-    		if ('todays_date' in $$props) $$invalidate(22, todays_date = $$props.todays_date);
-    		if ('individuals' in $$props) $$invalidate(87, individuals = $$props.individuals);
-    		if ('selected' in $$props) $$invalidate(50, selected = $$props.selected);
-    		if ('empty_identity' in $$props) $$invalidate(89, empty_identity = $$props.empty_identity);
-    		if ('show_dialog' in $$props) $$invalidate(14, show_dialog = $$props.show_dialog);
+    		if ('prev_active' in $$props) $$invalidate(50, prev_active = $$props.prev_active);
+    		if ('todays_date' in $$props) $$invalidate(23, todays_date = $$props.todays_date);
+    		if ('individuals' in $$props) $$invalidate(89, individuals = $$props.individuals);
+    		if ('selected' in $$props) $$invalidate(51, selected = $$props.selected);
+    		if ('empty_identity' in $$props) $$invalidate(91, empty_identity = $$props.empty_identity);
+    		if ('show_dialog' in $$props) $$invalidate(15, show_dialog = $$props.show_dialog);
     		if ('add_promise' in $$props) add_promise = $$props.add_promise;
-    		if ('show_update_dialog' in $$props) $$invalidate(15, show_update_dialog = $$props.show_update_dialog);
+    		if ('show_update_dialog' in $$props) $$invalidate(16, show_update_dialog = $$props.show_update_dialog);
     		if ('add_update_promise' in $$props) add_update_promise = $$props.add_update_promise;
-    		if ('show_conf_dialog' in $$props) $$invalidate(16, show_conf_dialog = $$props.show_conf_dialog);
+    		if ('show_conf_dialog' in $$props) $$invalidate(17, show_conf_dialog = $$props.show_conf_dialog);
     		if ('add_conf_promise' in $$props) add_conf_promise = $$props.add_conf_promise;
-    		if ('show_exec_dialog' in $$props) $$invalidate(17, show_exec_dialog = $$props.show_exec_dialog);
+    		if ('show_exec_dialog' in $$props) $$invalidate(18, show_exec_dialog = $$props.show_exec_dialog);
     		if ('add_exec_promise' in $$props) add_exec_promise = $$props.add_exec_promise;
-    		if ('show_npm_dialog' in $$props) $$invalidate(18, show_npm_dialog = $$props.show_npm_dialog);
+    		if ('show_npm_dialog' in $$props) $$invalidate(19, show_npm_dialog = $$props.show_npm_dialog);
     		if ('add_npm_promise' in $$props) add_npm_promise = $$props.add_npm_promise;
-    		if ('npm_action' in $$props) $$invalidate(19, npm_action = $$props.npm_action);
-    		if ('active_proc_data' in $$props) $$invalidate(20, active_proc_data = $$props.active_proc_data);
-    		if ('current_index' in $$props) $$invalidate(51, current_index = $$props.current_index);
+    		if ('npm_action' in $$props) $$invalidate(20, npm_action = $$props.npm_action);
+    		if ('active_proc_data' in $$props) $$invalidate(21, active_proc_data = $$props.active_proc_data);
+    		if ('current_index' in $$props) $$invalidate(52, current_index = $$props.current_index);
     		if ('creation_to_do' in $$props) creation_to_do = $$props.creation_to_do;
     		if ('window_scale' in $$props) window_scale = $$props.window_scale;
     		if ('edit_popup_scale' in $$props) edit_popup_scale = $$props.edit_popup_scale;
     		if ('all_window_scales' in $$props) all_window_scales = $$props.all_window_scales;
-    		if ('md' in $$props) $$invalidate(21, md = $$props.md);
-    		if ('filtered_manifest_contact_form_list' in $$props) $$invalidate(52, filtered_manifest_contact_form_list = $$props.filtered_manifest_contact_form_list);
-    		if ('filteredIndviduals' in $$props) $$invalidate(53, filteredIndviduals = $$props.filteredIndviduals);
+    		if ('md' in $$props) $$invalidate(22, md = $$props.md);
+    		if ('filtered_manifest_contact_form_list' in $$props) $$invalidate(53, filtered_manifest_contact_form_list = $$props.filtered_manifest_contact_form_list);
+    		if ('filteredIndviduals' in $$props) $$invalidate(54, filteredIndviduals = $$props.filteredIndviduals);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -24973,25 +25013,25 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty[1] & /*filteredIndviduals*/ 4194304) {
-    			$$invalidate(50, selected = i >= 0
+    		if ($$self.$$.dirty[1] & /*filteredIndviduals*/ 8388608) {
+    			$$invalidate(51, selected = i >= 0
     			? filteredIndviduals[i]
     			: empty_identity.identity());
     		}
 
-    		if ($$self.$$.dirty[1] & /*selected*/ 524288) ;
+    		if ($$self.$$.dirty[1] & /*selected*/ 1048576) ;
 
     		if ($$self.$$.dirty[0] & /*known_procs, u_index*/ 5) {
     			//
-    			$$invalidate(46, active_procs = known_procs[u_index]);
+    			$$invalidate(47, active_procs = known_procs[u_index]);
     		}
 
-    		if ($$self.$$.dirty[1] & /*active_procs*/ 32768) {
+    		if ($$self.$$.dirty[1] & /*active_procs*/ 65536) {
     			{
     				if (active_procs) {
     					$$invalidate(10, active_proc_name = active_procs.proc_name);
     					window.set_user_title(active_procs.proc_name);
-    					$$invalidate(20, active_proc_data = Object.assign({}, active_procs));
+    					$$invalidate(21, active_proc_data = Object.assign({}, active_procs));
 
     					if (!active_procs.running) {
     						$$invalidate(11, running_color = "darkred");
@@ -25004,39 +25044,39 @@ var app = (function () {
     			}
     		}
 
-    		if ($$self.$$.dirty[1] & /*active_procs*/ 32768) ;
+    		if ($$self.$$.dirty[1] & /*active_procs*/ 65536) ;
 
-    		if ($$self.$$.dirty[0] & /*u_index*/ 4 | $$self.$$.dirty[1] & /*current_index*/ 1048576) {
+    		if ($$self.$$.dirty[0] & /*u_index*/ 4 | $$self.$$.dirty[1] & /*current_index*/ 2097152) {
     			{
     				if (current_index !== u_index) {
-    					$$invalidate(51, current_index = u_index);
+    					$$invalidate(52, current_index = u_index);
     				}
     			}
     		}
 
-    		if ($$self.$$.dirty[1] & /*filtered_manifest_contact_form_list, manifest_selected_entry, man_cwid*/ 2293760) {
+    		if ($$self.$$.dirty[1] & /*filtered_manifest_contact_form_list, manifest_selected_entry, man_cwid*/ 4587520) {
     			{
-    				$$invalidate(47, manifest_selected_entry = filtered_manifest_contact_form_list[manifest_index]);
+    				$$invalidate(48, manifest_selected_entry = filtered_manifest_contact_form_list[manifest_index]);
 
     				if (manifest_selected_entry !== undefined && manifest_selected_entry) {
     					manifest_selected_form = manifest_selected_entry.html;
     					man_title = manifest_selected_entry.info;
     					man_max_preference = manifest_obj.max_preference;
     					man_preference = manifest_selected_entry.preference;
-    					$$invalidate(48, man_cwid = manifest_selected_entry.cwid);
+    					$$invalidate(49, man_cwid = manifest_selected_entry.cwid);
     					man_contact_is_default = man_cwid === manifest_obj.default_contact_form;
     				}
     			}
     		}
 
-    		if ($$self.$$.dirty[0] & /*active*/ 2 | $$self.$$.dirty[1] & /*prev_active*/ 262144) {
+    		if ($$self.$$.dirty[0] & /*active*/ 2 | $$self.$$.dirty[1] & /*prev_active*/ 524288) {
     			{
 
-    				$$invalidate(49, prev_active = active);
+    				$$invalidate(50, prev_active = active);
     			}
     		}
 
-    		if ($$self.$$.dirty[0] & /*u_index*/ 4 | $$self.$$.dirty[1] & /*active_procs*/ 32768) {
+    		if ($$self.$$.dirty[0] & /*u_index*/ 4 | $$self.$$.dirty[1] & /*active_procs*/ 65536) {
     			{
     				creation_to_do = u_index === false || active_procs && active_procs.biometric === undefined;
 
@@ -25047,14 +25087,14 @@ var app = (function () {
     		}
     	};
 
-    	$$invalidate(53, filteredIndviduals = prefix
+    	$$invalidate(54, filteredIndviduals = prefix
     	? individuals.filter(individual => {
     			const name = `${individual.name}`;
     			return name.toLowerCase().startsWith(prefix.toLowerCase());
     		})
     	: individuals);
 
-    	$$invalidate(52, filtered_manifest_contact_form_list = man_prefix
+    	$$invalidate(53, filtered_manifest_contact_form_list = man_prefix
     	? manifest_contact_form_list.filter(man_contact => {
     			const name = `${man_contact.name}`;
     			return name.toLowerCase().startsWith(man_prefix.toLowerCase());
@@ -25076,6 +25116,7 @@ var app = (function () {
     		running_color,
     		running_state,
     		admin_pass,
+    		use_debugger,
     		show_dialog,
     		show_update_dialog,
     		show_conf_dialog,
@@ -25122,6 +25163,7 @@ var app = (function () {
     		select_change_handler,
     		input_input_handler_2,
     		input_input_handler_3,
+    		input_change_handler,
     		textarea_input_handler,
     		makeentrydialog0_admin_pass_binding,
     		editconfdialog_conf_dialog_data_binding,

@@ -3499,24 +3499,37 @@ function manager_ws_handler(message) {
         message = message.data
     }
 
-    if ( message.op === "proc-status") {
-        let data = message.data
-        let poc_list = []
+    if ( typeof message.op === 'string' ) {
+        switch ( message.op ) {
+            case "proc-status" : {
+                let data = message.data
+                let poc_list = []
 
-        for ( let proc in data ) {
-            poc_list.push(data[proc])
-        }
-        let future = [poc_list,data]
-if ( poc_list.length === 0 ) {
-    console.log("EMPTY DATA")
-}
-
-        if ( window._expose_to_page ) {
-            window._expose_to_page(future)
-        }
-    } else if (message.op === "console-output" ) {
-        if ( window._add_console_data ) {
-            window._add_console_data(message)
+                for ( let proc in data ) {
+                    poc_list.push(data[proc])
+                }
+                let future = [poc_list,data]
+                if ( window._expose_to_page ) {
+                    window._expose_to_page(future)
+                }
+                break;
+            }
+            case "console-output" : {
+                if ( window._add_console_data ) {
+                    window._add_console_data(message)
+                }
+                break;
+            }
+            case "debug_url" : {
+                console.log("THIS IS A TEST",message.op)
+                console.log(message)
+                let dbg_url = message.data
+                if ( dbg_url ) {
+                    let window_name = "debugger"
+                    confirm(dbg_url)
+                }
+                break;
+            }
         }
     }
 }

@@ -52,6 +52,7 @@
 
 
 	let admin_pass = ""
+	let use_debugger = false
 
 	
 	let manifest_selected_entry = false
@@ -629,7 +630,8 @@
 				"name" : "run-proc",
 				"param" : {
 					"proc_name" : pname,
-					"if_running" : false
+					"if_running" : false,
+					"use_debugger" : use_debugger
 				}
 			}
 		}
@@ -1124,6 +1126,23 @@
 		font-size:smaller;
 	}
 
+	.for-checker {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.25rem;
+  		white-space: nowrap;
+		max-height: 60px;
+		vertical-align: baseline;
+		border-bottom: 1px solid rgb(26, 20, 26);
+	}
+
+	.for-checker > [type="checkbox"] {
+		vertical-align: middle; /* or baseline / text-bottom */
+		margin-bottom: 1px;
+		padding: 0%;
+		cursor: pointer;
+	}
+
 
 	.nice_message {
 		width: 85%;
@@ -1135,248 +1154,6 @@
 		background: linear-gradient(to right, white, rgb(252, 251, 248) );
 	}
 
-/*
-
-	.add-profile-div {
-		margin-top:8px;
-		border: 1px solid rgb(165, 161, 190);
-		padding: 2px;
-		background: -webkit-linear-gradient(to right, rgb(252, 251, 240) ,rgb(249, 252, 248));
-		background: linear-gradient(to right, rgb(252, 251, 240), rgb(249, 252, 248) );
-	}
-
-	.top_instructions {
-		padding: 2px;
-		color:rgb(66, 33, 13);
-		border-bottom: sienna 1px solid;
-		font: 0.9em sans-serif;
-		font-weight: 600;
-		font-style: oblique;
-	}
-
-
-	.team_message {
-		background-color: rgb(254, 252, 245);
-		border: solid 1px darkblue;
-		padding:4px;
-		color:rgb(12, 12, 100);
-		font-size: 110%;
-		height: calc(100vh - 280px);
-		overflow: scroll;
-	}
-
-	.team_message blockquote {
-		width: 85%;
-		line-height: 200%;
-	}
-
-	.items {
-		display: flex;
-		flex-wrap: wrap;
-		margin-left: 2px;
-		margin-top: -10px;
-	}
-
-	.items .item {
-		flex: 1 0 300px;
-		box-sizing: border-box;
-		background: -webkit-linear-gradient(to right, rgba(242, 242, 210, 0.3), white);
-		background: linear-gradient(to right, rgba(242, 242, 210, 0.3), white );
-		color: #171e42;
-		padding: 10px;
-		margin-left: 2px;
-		margin-top: 0px;
-	}
-
-	.items {
-		padding-left: 5px;
-		padding-bottom: 4px;
-		padding-right: 12px;
-		font-size: 110%;
-		font-family: sans-serif;
-	}
-	
-	td, th {
-		border : 1px solid rgb(47, 79, 49);
-		border-right: none;
-		padding : 2px;
-		margin : 0px;
-	}
-
-	th {
-		color :rgb(47, 79, 49);
-		font-weight: bolder;
-		background-color: seashell;
-	}
-
-	table {
-		border-right: solid 1px darkslategray;
-	}
-
-	.subject {
-		font-weight: bold;
-	}
-
-	.sender {
-		background-color: rgb(255, 255, 255);
-		font-weight: 600;
-		color:rgb(27, 78, 31);
-		padding-left: 4px;
-	}
-
-
-	.tableFixHead {
-		overflow-y: auto;
-		height: calc(100vh - 200px);
-	}
-	.tableFixHead thead th {
-		position: sticky;
-		top: 0;
-	}
-	table {
-		border-collapse: collapse;
-		width: 100%;
-	}
-	th, td {
-		padding: 8px 16px;
-		border: 1px solid #ccc;
-	}
-	th {
-		background: #eee;
-	}
-
-	tr {
-		cursor: pointer;
-	}
-
-	.tableFixHead option {
-		cursor: pointer;
-	}
-
-
-	.user-options {
-		background-color: rgb(252, 252, 249);
-	}
-
-	.user-options option {
-		cursor: pointer;
-	}
-
-	.selected_form_link-display {
-		margin-top:4px;
-		margin-bottom:4px;
-		border: solid 1px rgb(13, 48, 20);
-		padding:4px;
-		background-color: white;
-		height:200px;
-		overflow:auto;
-	}
-
-	#man_cwid {
-		font-size:smaller;
-		min-width:100%;
-		font-weight:bold;
-	}
-
-	.signup-status {
-		color: black;
-		background-color: rgb(254, 252, 245);
-		font-weight: bold;
-		border: solid 1px rgb(13, 48, 20);
-		padding:4px;
-		height: 60px;
-		overflow: auto;
-	} 
-	.good-status {
-		color: green;
-	}
-	.bad-status {
-		color: red;
-	}
-
-	.contact_form_list {
-		margin-top:4px;
-		margin-bottom:4px;
-		border: solid 1px navy;
-		padding:4px;
-		color: darkgreen;
-		background-color: rgb(253, 249, 242);
-		text-align: center;
-	}
-
-	.signup-grid-container {
-		display: grid;
-		grid-column-gap: 2px;
-		grid-row-gap: 2px;
-		grid-template-columns: 65% auto;
-		background-color: rgb(250, 250, 242);
-		padding: 4px;
-	}
-
-	.signerupper {
-		background-color: rgb(252, 251, 248);
-		border: solid 1px rgb(0, 0, 117);
-		padding:6px;
-	}
-
-	.picture-drop {
-		width:90px;
-		min-height:90px;
-		border: 1px solid navy;
-		background-color:rgb(225, 230, 236);
-		display:inline-block;
-		margin: 2px;
-		text-align:center;
-		vertical-align: middle;
-		cursor:pointer;
-	}
-
-	.picture-drop:hover {
-		border: 2px dotted rgb(180, 8, 31);
-		background-color:rgb(151, 197, 114);
-	}
-
-	.picture-drop > .capture_image {
-		position:absolute; 
-		top:0px; 
-		left:0px; 
-		z-index:100; 
-		width: auto; 
-		height: inherit; 
-		border:none;
-		cursor:pointer;
-	}
-
-	.contact_controls {
-		width: calc(32vw - 96px);
-		margin: 2px;
-		border: 1px solid navy;
-		display:inline-block;
-		background-color: white;
-	}
-
-	.contact_controls button {
-		border-radius: 8px;
-	}
-
-	.manifest-grid-container {
-		display: grid;
-		grid-column-gap: 2px;
-		grid-row-gap: 2px;
-		grid-template-columns: 40% auto;
-		background-color: rgb(250, 250, 242);
-		padding: 4px;
-	}
-
-	.manifester {
-		background-color: rgb(244, 248, 244);
-		border: solid 1px darkblue;
-		padding:4px;
-	}
-
-/*
-*/
-
 	.active-tab {
 		color: rgb(40, 122, 19);
 		background-color: rgb(255, 255, 255);
@@ -1386,41 +1163,7 @@
 	.plain-tab {
 		color: rgb(1, 10, 1);
 	}
-/*
-	.manifest-contact-entry-instruct {
-		font-weight: 540;
-		font-style:oblique;
-		padding-right:3px;
-		color:tomato;
-		background-color: rgba(235, 225, 235, 0.61);
 
-	.man-default-selected {
-		color:rgb(56, 156, 81);
-		background-color:rgb(231, 243, 231);
-		font-weight: bold;
-		border: 1x solid rgb(7, 78, 7);
-	}
-	.man-default-not-selected {
-		color:navy;
-	}
-
-	.cwid-grabber {
-		font-weight:bolder;
-		color:navy;
-	}
-
-	.cwid-grabber-label {
-		font-weight:600;
-		color:rgb(50, 148, 50);
-		font-style: oblique;
-	}
-
-	.instructor {
-		padding: 3px;
-		margin-bottom: 4px;
-	}
-
-*/
 
 	.dialoger {
 		position : absolute;
@@ -1502,9 +1245,9 @@
 				<label for="admin-pass">Admin Password</label><input type="text" id="admin-pass-2" bind:value={admin_pass} />
 				{/if}
 			</div>
-			<button  style="font-size:larger" on:click={toggle_password_view}>&#x1F441;</button>
+			<button style="font-size:larger" on:click={toggle_password_view}>&#x1F441;</button>
 		</div>
-		<div class="inner_div">
+		<div class="inner_div" style="width: 100%;">
 			<button on:click={run_proc}>run</button>
 			<button on:click={stop_proc}>stop</button>
 			<button on:click={restart_proc}>restart</button>
@@ -1512,6 +1255,7 @@
 			<button on:click={update_entry}>update</button>
 			<button on:click={remove_entry}>remove</button>
 			<button on:click={edit_app_config}>config</button>
+			<div class="for-checker">&tridot;&nbsp;debugger&nbsp;[<input id="use-debugger-checkbox" type='checkbox' bind:checked={use_debugger} />]</div>
 		</div>
 		<div class="inner_div">
 		<JsonView json={active_proc_data} />

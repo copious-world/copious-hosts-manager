@@ -280,7 +280,7 @@ console.log(obj.data)
 
 app.post('/app/run-sys-op', async (req, res) => {
 
-    if ( await g_host_ops.app_run_sys_op(req.body) ) {
+    if ( await g_host_ops.app_run_sys_op(req.body,websocket_info_callback) ) {
         send(res,200,{ "status" : "OK" })
     } else {
         send(res,200,{ "status" : "ERR" })
@@ -328,6 +328,18 @@ function ws_proc_status() {
             "op" : "proc-status",
             "data" : sendable
         }
+        g_ws_socks.send_to_going_sessions(op_message)
+    }
+}
+
+/**
+ * 
+ * @param {string} op 
+ * @param {object|string} data 
+ */
+function websocket_info_callback(op,data) {
+    if ( g_proc_managers && g_ws_socks ) {
+        let op_message = { op, data }
         g_ws_socks.send_to_going_sessions(op_message)
     }
 }
